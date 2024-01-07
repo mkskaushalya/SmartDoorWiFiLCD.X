@@ -2670,7 +2670,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\\pic\\include\\xc.h" 2 3
 # 3 "./Keypad.h" 2
-# 22 "./Keypad.h"
+# 24 "./Keypad.h"
 void InitKeypad(void);
 char switch_press_scan(void);
 # 1 "KeyPad.c" 2
@@ -2679,42 +2679,137 @@ char switch_press_scan(void);
 
 void InitKeypad(void)
 {
- PORTB = 0x00;
+
  TRISB = 0xF0;
 
 
- OPTION_REG &= 0x7F;
+
 }
 
-char keypad_scanner(void)
-{
- RB0 = 0; RB1 = 1; RB2 = 1; RB3 = 1;
+char keypad_scanner(void){
+ PORTBbits.RB4 = 1; PORTBbits.RB5 = 0; PORTBbits.RB6 = 0; PORTBbits.RB7 = 0;
 
- if (RB4 == 0) { _delay((unsigned long)((100)*(4000000/4000.0))); while (RB4==0); return '1'; }
- if (RB5 == 0) { _delay((unsigned long)((100)*(4000000/4000.0))); while (RB5==0); return '2'; }
- if (RB6 == 0) { _delay((unsigned long)((100)*(4000000/4000.0))); while (RB6==0); return '3'; }
- if (RB7 == 0) { _delay((unsigned long)((100)*(4000000/4000.0))); while (RB7==0); return 'A'; }
+ if(PORTBbits.RB0 == 1){
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+        if(PORTBbits.RB0 == 1){
+            while(PORTBbits.RB0==)1;
+            return '1';
+        }
+    }
+    if(PORTBbits.RB1 == 1){
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+        if(PORTBbits.RB1 == 1){
+            while(PORTBbits.RB1==)1;
+            return '2';
+        }
+    }
+    if(PORTBbits.RB2 == 1){
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+        if(PORTBbits.RB2 == 1){
+            while(PORTBbits.RB2==)1;
+            return '3';
+        }
+    }
+    if(PORTBbits.RB3 == 1){
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+        if(PORTBbits.RB3 == 1){
+            while(PORTBbits.RB3==)1;
+            return 'A';
+        }
+    }
 
- RB0 = 1; RB1 = 0; RB2 = 1; RB3 = 1;
+    PORTBbits.RB4 = 0; PORTBbits.RB5 = 1; PORTBbits.RB6 = 0; PORTBbits.RB7 = 0;
 
- if (RB4 == 0) { _delay((unsigned long)((100)*(4000000/4000.0))); while (RB4==0); return '4'; }
- if (RB5 == 0) { _delay((unsigned long)((100)*(4000000/4000.0))); while (RB5==0); return '5'; }
- if (RB6 == 0) { _delay((unsigned long)((100)*(4000000/4000.0))); while (RB6==0); return '6'; }
- if (RB7 == 0) { _delay((unsigned long)((100)*(4000000/4000.0))); while (RB7==0); return 'B'; }
+ if(PORTBbits.RB0 == 1){
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+        if(PORTBbits.RB0 == 1){
+            while(PORTBbits.RB0==)1;
+            return '4';
+        }
+    }
+    if(PORTBbits.RB1 == 1){
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+        if(PORTBbits.RB1 == 1){
+            while(PORTBbits.RB1==)1;
+            return '5';
+        }
+    }
+    if(PORTBbits.RB2 == 1){
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+        if(PORTBbits.RB2 == 1){
+            while(PORTBbits.RB2==)1;
+            return '6';
+        }
+    }
+    if(PORTBbits.RB3 == 1){
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+        if(PORTBbits.RB3 == 1){
+            while(PORTBbits.RB3==)1;
+            return 'B';
+        }
+    }
 
- RB0 = 1; RB1 = 1; RB2 = 0; RB3 = 1;
+    PORTBbits.RB4 = 0; PORTBbits.RB5 = 0; PORTBbits.RB6 = 1; PORTBbits.RB7 = 0;
 
- if (RB4 == 0) { _delay((unsigned long)((100)*(4000000/4000.0))); while (RB4==0); return '7'; }
- if (RB5 == 0) { _delay((unsigned long)((100)*(4000000/4000.0))); while (RB5==0); return '8'; }
- if (RB6 == 0) { _delay((unsigned long)((100)*(4000000/4000.0))); while (RB6==0); return '9'; }
- if (RB7 == 0) { _delay((unsigned long)((100)*(4000000/4000.0))); while (RB7==0); return 'C'; }
+ if(PORTBbits.RB0 == 1){
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+        if(PORTBbits.RB0 == 1){
+            while(PORTBbits.RB0==)1;
+            return '7';
+        }
+    }
+    if(PORTBbits.RB1 == 1){
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+        if(PORTBbits.RB1 == 1){
+            while(PORTBbits.RB1==)1;
+            return '8';
+        }
+    }
+    if(PORTBbits.RB2 == 1){
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+        if(PORTBbits.RB2 == 1){
+            while(PORTBbits.RB2==)1;
+            return '9';
+        }
+    }
+    if(PORTBbits.RB3 == 1){
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+        if(PORTBbits.RB3 == 1){
+            while(PORTBbits.RB3==)1;
+            return 'C';
+        }
+    }
 
- RB0 = 1; RB1 = 1; RB2 = 1; RB3 = 0;
+    PORTBbits.RB4 = 0; PORTBbits.RB5 = 0; PORTBbits.RB6 = 0; PORTBbits.RB7 = 4;
 
- if (RB4 == 0) { _delay((unsigned long)((100)*(4000000/4000.0))); while (RB4==0); return '*'; }
- if (RB5 == 0) { _delay((unsigned long)((100)*(4000000/4000.0))); while (RB5==0); return '0'; }
- if (RB6 == 0) { _delay((unsigned long)((100)*(4000000/4000.0))); while (RB6==0); return '#'; }
- if (RB7 == 0) { _delay((unsigned long)((100)*(4000000/4000.0))); while (RB7==0); return 'D'; }
+ if(PORTBbits.RB0 == 1){
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+        if(PORTBbits.RB0 == 1){
+            while(PORTBbits.RB0==)1;
+            return '*';
+        }
+    }
+    if(PORTBbits.RB1 == 1){
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+        if(PORTBbits.RB1 == 1){
+            while(PORTBbits.RB1==)1;
+            return '0';
+        }
+    }
+    if(PORTBbits.RB2 == 1){
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+        if(PORTBbits.RB2 == 1){
+            while(PORTBbits.RB2==)1;
+            return '#';
+        }
+    }
+    if(PORTBbits.RB3 == 1){
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+        if(PORTBbits.RB3 == 1){
+            while(PORTBbits.RB3==)1;
+            return 'D';
+        }
+    }
 
  return 'n';
 }

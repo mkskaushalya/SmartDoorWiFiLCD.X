@@ -124,22 +124,30 @@ void main(void){
 //    }
 
     int j = 0;
+    LCD_clear();
+    LCD_cursor_set(1, 1);
+    LCD_write_string("Enter Key");
+    char keyvalue = 's';
     while(1){
-        LCD_clear();
-        LCD_cursor_set(1, 1);
-        LCD_write_string("Enter Key");
-        char Key = 'n';
         LCD_cursor_set(2, 1);
-        while(1){
-            LCD_write_char('Z');
-            Key = switch_press_scan();
-            LCD_write_char(Key);
-            if(Key == 'C'){
-                break;
-            }
-        }
+        keyvalue = keypad_scanner();
+        LCD_write_char(keyvalue);
+//        LCD_clear();
+//        LCD_cursor_set(1, 1);
+//        LCD_write_string("Enter Key");
+//        char Key = 'n';
+//        LCD_cursor_set(2, 1);
+//        while(1){
+//            LCD_write_char('Z');
+//            Key = switch_press_scan();
+//            LCD_write_char(Key);
+//            if(Key == 'C'){
+//                break;
+//            }
+//        }
+//        
+//        __delay_ms(1000);
         
-        __delay_ms(1000);
         
     }
     

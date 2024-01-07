@@ -3305,7 +3305,7 @@ extern uint8_t LCD_entry_mode;
 # 35 "main.c" 2
 
 # 1 "./KeyPad.h" 1
-# 22 "./KeyPad.h"
+# 24 "./KeyPad.h"
 void InitKeypad(void);
 char switch_press_scan(void);
 # 36 "main.c" 2
@@ -3374,23 +3374,15 @@ void main(void){
     _delay((unsigned long)((1000)*(4000000/4000.0)));
 # 126 "main.c"
     int j = 0;
+    LCD_clear();
+    LCD_cursor_set(1, 1);
+    LCD_write_string("Enter Key");
+    char keyvalue = 's';
     while(1){
-        LCD_clear();
-        LCD_cursor_set(1, 1);
-        LCD_write_string("Enter Key");
-        char Key = 'n';
         LCD_cursor_set(2, 1);
-        while(1){
-            LCD_write_char('Z');
-            Key = switch_press_scan();
-            LCD_write_char(Key);
-            if(Key == 'C'){
-                break;
-            }
-        }
-
-        _delay((unsigned long)((1000)*(4000000/4000.0)));
-
+        keyvalue = keypad_scanner();
+        LCD_write_char(keyvalue);
+# 152 "main.c"
     }
 
 
