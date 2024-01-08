@@ -1,211 +1,147 @@
-#include "Keypad.h"
+#include "KeyPad.h"
 
-// Function name: InitKeypad
-void InitKeypad(void)
-{
-    // Keypad_PORT	    = 0x00;	// Set Keypad port pin values zero
-    Keypad_PORT_Direction = 0xF0; // Last 4 pins input, First 4 pins output
+const char KeyPadChar[] = {
+                           '1', '2', '3', 'A',
+                           '4', '5', '6', 'B',
+                           '7', '8', '9', 'C',
+                           '*', '0', '#', 'D',
+                           '?'
+    };
 
-    // OPTION_REG &= 0x7F;
-}
-
-char keypad_scanner(void)
-{
-    C1 = 1;
-    C2 = 0;
-    C3 = 0;
-    C4 = 0;
-
-    if (R1 == 1)
+void InitKeyPad(void)
     {
-        __delay_ms(20);
-        if (R1 == 1)
-        {
-            while (R1 == 1)
-                ;
-            return '1';
-        }
-    }
-    if (R2 == 1)
-    {
-        __delay_ms(20);
-        if (R2 == 1)
-        {
-            while (R2 == 1)
-                ;
-            return '2';
-        }
-    }
-    if (R3 == 1)
-    {
-        __delay_ms(20);
-        if (R3 == 1)
-        {
-            while (R3 == 1)
-                ;
-            return '3';
-        }
-    }
-    if (R4 == 1)
-    {
-        __delay_ms(20);
-        if (R4 == 1)
-        {
-            while (R4 == 1)
-                ;
-            return 'A';
-        }
+    ROW_TRIS(0);
+    COL_TRIS(1);
     }
 
-    C1 = 0;
-    C2 = 1;
-    C3 = 0;
-    C4 = 0;
-
-    if (R1 == 1)
+/* Quet keypad */
+char ScanKey(void)
     {
-        __delay_ms(20);
-        if (R1 == 1)
+    ROWA = 0;
+    ROWB = 1;
+    ROWC = 1;
+    ROWD = 1; //Test Row A
+    if (COL1 == 0)
         {
-            while (R1 == 1)
-                ;
-            return '4';
-        }
-    }
-    if (R2 == 1)
-    {
-        __delay_ms(20);
-        if (R2 == 1)
-        {
-            while (R2 == 1)
-                ;
-            return '5';
-        }
-    }
-    if (R3 == 1)
-    {
-        __delay_ms(20);
-        if (R3 == 1)
-        {
-            while (R3 == 1)
-                ;
-            return '6';
-        }
-    }
-    if (R4 == 1)
-    {
-        __delay_ms(20);
-        if (R4 == 1)
-        {
-            while (R4 == 1)
-                ;
-            return 'B';
-        }
-    }
-
-    C1 = 0;
-    C2 = 0;
-    C3 = 1;
-    C4 = 0;
-
-    if (R1 == 1)
-    {
-        __delay_ms(20);
-        if (R1 == 1)
-        {
-            while (R1 == 1)
-                ;
-            return '7';
-        }
-    }
-    if (R2 == 1)
-    {
-        __delay_ms(20);
-        if (R2 == 1)
-        {
-            while (R2 == 1)
-                ;
-            return '8';
-        }
-    }
-    if (R3 == 1)
-    {
-        __delay_ms(20);
-        if (R3 == 1)
-        {
-            while (R3 == 1)
-                ;
-            return '9';
-        }
-    }
-    if (R4 == 1)
-    {
-        __delay_ms(20);
-        if (R4 == 1)
-        {
-            while (R4 == 1)
-                ;
-            return 'C';
-        }
-    }
-
-    C1 = 0;
-    C2 = 0;
-    C3 = 0;
-    C4 = 4;
-
-    if (R1 == 1)
-    {
-        __delay_ms(20);
-        if (R1 == 1)
-        {
-            while (R1 == 1)
-                ;
-            return '*';
-        }
-    }
-    if (R2 == 1)
-    {
-        __delay_ms(20);
-        if (R2 == 1)
-        {
-            while (R2 == 1)
-                ;
-            return '0';
-        }
-    }
-    if (R3 == 1)
-    {
-        __delay_ms(20);
-        if (R3 == 1)
-        {
-            while (R3 == 1)
-                ;
-            return '#';
-        }
-    }
-    if (R4 == 1)
-    {
-        __delay_ms(20);
-        if (R4 == 1)
-        {
-            while (R4 == 1)
-                ;
+        __delay_us(1000);
+        if (COL1 == 0)
             return 'D';
         }
+    if (COL2 == 0)
+        {
+        __delay_us(1000);
+        if (COL2 == 0)
+            return 'C';
+        }
+    if (COL3 == 0)
+        {
+        __delay_us(1000);
+        if (COL3 == 0)
+            return 'B';
+        }
+    if (COL4 == 0)
+        {
+        __delay_us(1000);
+        if (COL4 == 0)
+            return 'A';
+        }
+
+    ROWA = 1;
+    ROWB = 0;
+    ROWC = 1;
+    ROWD = 1; //Test Row B
+    if (COL1 == 0)
+        {
+        __delay_us(1000);
+        if (COL1 == 0)
+            return '#';
+        }
+    if (COL2 == 0)
+        {
+        __delay_us(1000);
+        if (COL2 == 0)
+            return '9';
+        }
+    if (COL3 == 0)
+        {
+        __delay_us(1000);
+        if (COL3 == 0)
+            return '6';
+        }
+    if (COL4 == 0)
+        {
+        __delay_us(1000);
+        if (COL4 == 0)
+            return '3';
+        }
+
+    ROWA = 1;
+    ROWB = 1;
+    ROWC = 0;
+    ROWD = 1; //Test Row C
+    if (COL1 == 0)
+        {
+        __delay_us(1000);
+        if (COL1 == 0)
+            return '0';
+        }
+    if (COL2 == 0)
+        {
+        __delay_us(1000);
+        if (COL2 == 0)
+            return '8';
+        }
+    if (COL3 == 0)
+        {
+        __delay_us(1000);
+        if (COL3 == 0)
+            return '5';
+        }
+    if (COL4 == 0)
+        {
+        __delay_us(1000);
+        if (COL4 == 0)
+            return '2';
+        }
+
+    ROWA = 1;
+    ROWB = 1;
+    ROWC = 1;
+    ROWD = 0; //Test Row D
+    if (COL1 == 0)
+        {
+        __delay_us(1000);
+        if (COL1 == 0)
+            return '*';
+        }
+    if (COL2 == 0)
+        {
+        __delay_us(1000);
+        if (COL2 == 0)
+            return '7';
+        }
+    if (COL3 == 0)
+        {
+        __delay_us(1000);
+        if (COL3 == 0)
+            return '4';
+        }
+    if (COL4 == 0)
+        {
+        __delay_us(1000);
+        if (COL4 == 0)
+            return '1';
+        }
+    return '?'; // Khong phim nao duoc bam
     }
 
-    return 'n';
-}
+/* Lay ki tu */
+char GetKey(void)
+    {
+    char key = '?'; // Gia su chua co nut nao duoc bam
+    while (key == '?') // Cho cho den khi 1 nut duoc bam
+        key = ScanKey(); // Quet keypad
 
-// Function name: GetKey
-// Read pressed key value from keypad and return its value
-char switch_press_scan(void) // Get key from user
-{
-    char key = 'n'; // Assume no key pressed
+    return key; // Khi co 1 nut duoc bam thi tra ve gia tri nut bam do
+    }
 
-    while (key == 'n')          // Wait untill a key is pressed
-        key = keypad_scanner(); // Scan the keys again and again
-
-    return key; // when key pressed then return its value
-}

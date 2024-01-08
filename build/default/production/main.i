@@ -3304,12 +3304,12 @@ extern uint8_t LCD_entry_mode;
     void SendCommandAT(unsigned char*);
 # 35 "main.c" 2
 
-# 1 "./KeyPad.h" 1
-# 22 "./KeyPad.h"
-void InitKeypad(void);
-char switch_press_scan(void);
-# 36 "main.c" 2
-# 51 "main.c"
+
+
+
+
+#pragma warning disable 520
+# 53 "main.c"
 unsigned char StringReceive[30];
 unsigned int pos;
 unsigned char WifiName[30]="_";
@@ -3326,14 +3326,38 @@ void ClearStringReceive() {
         StringReceive[i] = '\0';
 }
 
+
 int test = 0;
+char keypad_scan() {
+    char keypad[4][4] = {{'1', '2', '3', 'A'},
+                         {'4', '5', '6', 'B'},
+                         {'7', '8', '9', 'C'},
+                         {'*', '0', '#', 'D'}};
+
+    for (int i = 0; i < 4; i++) {
+        PORTB = 0xFF;
+        PORTB &= ~(1 << (i + 4));
+
+        for (int j = 0; j < 4; j++) {
+            if (!(PORTB & (1 << j))) {
+                while (!(PORTB & (1 << j)));
+                return keypad[i][j];
+            }
+        }
+    }
+
+    return 0;
+}
+
 void main(void){
+    TRISB = 0xF0;
+    PORTB = 0x00;
+
     LCD_init();
     LCD_clear();
     LCD_cursor_set(1, 1);
     LCD_write_string("LCD_init()");
     _delay((unsigned long)((1000)*(4000000/4000.0)));
-    InitKeypad();
     LCD_cursor_set(1, 1);
     LCD_write_string("InitKeyPad()");
     _delay((unsigned long)((1000)*(4000000/4000.0)));
@@ -3342,7 +3366,6 @@ void main(void){
     LCD_cursor_set(2, 1);
     LCD_write_string("UART Init Success");
     _delay((unsigned long)((1000)*(4000000/4000.0)));
-
 
 
 
@@ -3372,30 +3395,25 @@ void main(void){
     SendCommandAT(StringReceive);
 
     _delay((unsigned long)((1000)*(4000000/4000.0)));
-# 126 "main.c"
-    int j = 0;
-    while(1){
-        LCD_clear();
-        LCD_cursor_set(1, 1);
-        LCD_write_string("Enter Key");
-        char Key = 'n';
-        LCD_cursor_set(2, 1);
-        while(1){
-            LCD_write_char('Z');
-            Key = switch_press_scan();
-            LCD_write_char(Key);
-            if(Key == 'C'){
-                break;
-            }
-        }
 
-        _delay((unsigned long)((1000)*(4000000/4000.0)));
+
+
+    int j = 0;
+    LCD_clear();
+    LCD_cursor_set(1, 1);
+    LCD_write_string("Enter Key");
+    LCD_cursor_set(2, 1);
+
+    while(1){
+
+
+        char key = keypad_scan();
+        SendCommandAT(key);
+        LCD_write_char(key);
+
 
     }
-
-
-
-
+# 175 "main.c"
 }
 
 void __attribute__((picinterrupt(("")))) ISR() {

@@ -33,9 +33,11 @@
 #include <stdbool.h>
 #include "LCD.h"
 #include "esp8266.h"
-#include "KeyPad.h"
+//#include "KeyPad.h"
 
 #define _XTAL_FREQ 4000000    // Set the oscillator frequency (4 MHz)
+
+#pragma warning disable 520
 
 #define WIFI_NAME                   "Vinh Bac Bo"
 #define PASSWORD                    "barcareal"
@@ -64,14 +66,38 @@ void ClearStringReceive()    {
         StringReceive[i] = '\0';
 }
 
+
 int test = 0;
+char keypad_scan() {
+    char keypad[4][4] = {{'1', '2', '3', 'A'},
+                         {'4', '5', '6', 'B'},
+                         {'7', '8', '9', 'C'},
+                         {'*', '0', '#', 'D'}};
+
+    for (int i = 0; i < 4; i++) {
+        PORTB = 0xFF;   // Enable all columns
+        PORTB &= ~(1 << (i + 4));  // Disable the i-th column
+
+        for (int j = 0; j < 4; j++) {
+            if (!(PORTB & (1 << j))) {
+                while (!(PORTB & (1 << j)));  // Wait for key release
+                return keypad[i][j];
+            }
+        }
+    }
+
+    return 0;  // Return 0 if no key is pressed
+}
+
 void main(void){
+    TRISB = 0xF0;   // Set RB0-RB3 as output (for columns) and RB4-RB7 as input (for rows)
+    PORTB = 0x00;   // Initialize PORTB to 0
+    
     LCD_init();
     LCD_clear();
     LCD_cursor_set(1, 1);
     LCD_write_string("LCD_init()");
     __delay_ms(1000);
-    InitKeypad();
     LCD_cursor_set(1, 1);
     LCD_write_string("InitKeyPad()");
     __delay_ms(1000);
@@ -82,7 +108,6 @@ void main(void){
     __delay_ms(1000);
     
     /*** SENDING COMMANDS ***/
-    
     
     LCD_clear();
     LCD_cursor_set(1, 1);
@@ -112,44 +137,37 @@ void main(void){
     __delay_ms(1000);
     
     
-    
-//    while(1){
-//        LCD_clear();
-//        LCD_cursor_set(1, 1);
-//        LCD_write_string("Received Data");
-//        LCD_cursor_set(2, 1);
-//        LCD_write_string(StringReceive);
-//        __delay_ms(1000);
-//        
-//    }
 
     int j = 0;
     LCD_clear();
     LCD_cursor_set(1, 1);
     LCD_write_string("Enter Key");
-    char keyvalue = 's';
+    LCD_cursor_set(2, 1);
+    //#############################################################
     while(1){
-        LCD_cursor_set(2, 1);
-        keyvalue = keypad_scanner();
-        LCD_write_char(keyvalue);
-//        LCD_clear();
-//        LCD_cursor_set(1, 1);
-//        LCD_write_string("Enter Key");
-//        char Key = 'n';
-//        LCD_cursor_set(2, 1);
-//        while(1){
-//            LCD_write_char('Z');
-//            Key = switch_press_scan();
-//            LCD_write_char(Key);
-//            if(Key == 'C'){
-//                break;
-//            }
-//        }
-//        
-//        __delay_ms(1000);
         
         
+        char key = keypad_scan();
+        SendCommandAT(key);
+        LCD_write_char(key);
+        
+
     }
+    
+    
+    
+    
+    //#############################################################
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
         
     // Initialize UART for communication with ESP8266
