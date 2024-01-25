@@ -66,33 +66,9 @@ void ClearStringReceive()    {
         StringReceive[i] = '\0';
 }
 
-
-int test = 0;
-char keypad_scan() {
-    char keypad[4][4] = {{'1', '2', '3', 'A'},
-                         {'4', '5', '6', 'B'},
-                         {'7', '8', '9', 'C'},
-                         {'*', '0', '#', 'D'}};
-
-    for (int i = 0; i < 4; i++) {
-        PORTB = 0xFF;   // Enable all columns
-        PORTB &= ~(1 << (i + 4));  // Disable the i-th column
-
-        for (int j = 0; j < 4; j++) {
-            if (!(PORTB & (1 << j))) {
-                while (!(PORTB & (1 << j)));  // Wait for key release
-                return keypad[i][j];
-            }
-        }
-    }
-
-    return 0;  // Return 0 if no key is pressed
-}
+unsigned int adcResult = 0;
 
 void main(void){
-    TRISB = 0xF0;   // Set RB0-RB3 as output (for columns) and RB4-RB7 as input (for rows)
-    PORTB = 0x00;   // Initialize PORTB to 0
-    
     LCD_init();
     LCD_clear();
     LCD_cursor_set(1, 1);
@@ -108,7 +84,6 @@ void main(void){
     __delay_ms(1000);
     
     /*** SENDING COMMANDS ***/
-    
     LCD_clear();
     LCD_cursor_set(1, 1);
     SendCommandAT("AT");
@@ -116,14 +91,6 @@ void main(void){
     char x, flag;
     LCD_cursor_set(2, 1);
     SendCommandAT("Waiting to Response");
-    while(1){
-        x = strstr(StringReceive, "OK"); //Kiem tra phan hoi tu esp8266
-        if (x != NULL){
-            test = 1;
-            SendCommandAT(StringReceive);
-            break;
-        }
-    }
     __delay_ms(1000);
     LCD_clear();
     LCD_cursor_set(1, 1);
@@ -131,46 +98,71 @@ void main(void){
     LCD_cursor_set(2, 1);
     LCD_write_string("ESP 8266 Connected");
     __delay_ms(1000);
-    SendCommandAT("Received OK");
-    SendCommandAT(StringReceive);
-    
-    __delay_ms(1000);
-    
-    
-
-    int j = 0;
     LCD_clear();
-    LCD_cursor_set(1, 1);
-    LCD_write_string("Enter Key");
-    LCD_cursor_set(2, 1);
     //#############################################################
+    TRISB=0X00; //Instruct the MCU that the PORTB pins are used as Output.
+    PORTB=0X00; //Make all LOW;
+
+    PORTBbits.RB7 = 0;
+    PORTBbits.RB6 = 0;
+    
+    ADCON1 = 0x80;  // Set AN0 to analog mode, Vref+ and Vref- are VDD and VSS
+    ADCON0 = 0x01;  // Select channel 0 (AN0)
+    
+    TRISA0 = 1;  
+
+    int ival;
+    
     while(1){
+        GO_nDONE = 1;
+        while(GO_nDONE);
+        
+        unsigned int adcResult = ADRESH << 8 | ADRESL;
+        
+        LCD_cursor_set(2, 1);
+        LCD_write_string(StringReceive);
+        LCD_cursor_set(1, 13);
+        LCD_write_variable(adcResult, 4);
+        LCD_cursor_set(1, 1);
+        if(strstr(StringReceive, "Open") != NULL){
+            LCD_write_string("Door Opened");
+            PORTBbits.RB6 = 1;
+            __delay_ms(1000);
+            PORTBbits.RB7 = 1;
+            
+            while(adcResult > 500){
+                GO_nDONE = 1;
+                while(GO_nDONE);
+                LCD_cursor_set(1, 1);
+                adcResult = ADRESH << 8 | ADRESL;
+                
+                LCD_cursor_set(1, 1);
+                LCD_write_string("Check IR SR");          
+                LCD_cursor_set(1, 13);
+                LCD_write_variable(adcResult, 4);
+                if(adcResult < 500){
+                    break;
+                }
+            }
+            LCD_cursor_set(1, 1);
+            LCD_write_string("Doned IR SR"); 
+            __delay_ms(500);
+            PORTBbits.RB6 = 0;
+            __delay_ms(1000);
+            PORTBbits.RB7 = 0;
+            
+            ClearStringReceive();
+        }else{
+            LCD_write_string("Door Closed");
+            ClearStringReceive();
+        }
         
         
-        char key = keypad_scan();
-        SendCommandAT(key);
-        LCD_write_char(key);
-        
+        __delay_ms(1000);
+        LCD_clear();
 
     }
-    
-    
-    
-    
-    //#############################################################
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        
-    // Initialize UART for communication with ESP8266
+
 
 }
 
@@ -182,11 +174,8 @@ void __interrupt() ISR() {
         RCIF = 0;
         // Your code to handle the received data goes here
         // For example, you can store it in a buffer or perform some processing
-        
     }
-    if(pos > 30){
-     ClearStringReceive();
-     pos = 0;
-    }
+    
+
 
 }

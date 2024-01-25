@@ -11,50 +11,46 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-reset_vec CODE 0 0 0 3 2 1
-end_init CODE 0 10 10 3 2 1
-config CONFIG 4 2007 2007 2 2 1
 $dist/default/production\SmartDoorWiFiLCD.X.production.o
-cinit CODE 0 13 13 59 2 1
-text1 CODE 0 520 520 51 2 1
-text2 CODE 0 4C1 4C1 5F 2 1
-text3 CODE 0 663 663 1D 2 1
-text4 CODE 0 69D 69D 19 2 1
-text5 CODE 0 3BE 3BE 8C 2 1
-text6 CODE 0 6CE 6CE 17 2 1
-text7 CODE 0 5D9 5D9 28 2 1
-text8 CODE 0 72D 72D A 2 1
-text9 CODE 0 601 601 26 2 1
-text10 CODE 0 737 737 A 2 1
-text11 CODE 0 296 296 94 2 1
-text12 CODE 0 44A 44A 77 2 1
-text13 CODE 0 6E5 6E5 17 2 1
-text14 CODE 0 5A8 5A8 31 2 1
-text15 CODE 0 32A 32A 94 2 1
-text16 CODE 0 71F 71F E 2 1
-text17 CODE 0 6B6 6B6 18 2 1
-text18 CODE 0 571 571 37 2 1
-text19 CODE 0 680 680 1D 2 1
-idataCOMMON CODE 0 749 749 3 2 1
-maintext CODE 0 6C 6C 168 2 1
-cstackCOMMON COMMON 1 70 70 6 1 1
-cstackBANK0 BANK0 1 20 20 1D 1 1
-inittext CODE 0 6FC 6FC 13 2 1
-intentry CODE 0 4 4 C 2 1
-bssBANK0 BANK0 1 4D 4D 6 1 1
-bssBANK1 BANK1 1 A0 A0 1E 1 1
+cinit CODE 0 11 11 36 2 1
+text1 CODE 0 344 344 53 2 1
+text2 CODE 0 784 784 5F 2 1
+text3 CODE 0 7E3 7E3 1B 2 1
+text4 CODE 0 EF5 EF5 17 2 1
+text5 CODE 0 EBE EBE E 2 1
+text6 CODE 0 3DF 3DF 1F 2 1
+text7 CODE 0 EA9 EA9 A 2 1
+text8 CODE 0 26C 26C D8 2 1
+text9 CODE 0 397 397 48 2 1
+text10 CODE 0 686 686 87 2 1
+text11 CODE 0 4C1 4C1 9D 2 1
+text12 CODE 0 F68 F68 2B 2 1
+text13 CODE 0 55E 55E 94 2 1
+text14 CODE 0 70D 70D 77 2 1
+text15 CODE 0 EDF EDF 16 2 1
+text16 CODE 0 F93 F93 31 2 1
+text17 CODE 0 5F2 5F2 94 2 1
+text18 CODE 0 EB3 EB3 B 2 1
+text19 CODE 0 F0C F0C 18 2 1
+text20 CODE 0 F24 F24 1F 2 1
+text21 CODE 0 F43 F43 25 2 1
+idataCOMMON CODE 0 E9E E9E 3 2 1
+maintext CODE 0 47 47 225 2 1
+cstackCOMMON COMMON 1 70 70 8 1 1
+cstackBANK0 BANK0 1 46 46 1E 1 1
+inittext CODE 0 ECC ECC 13 2 1
+intentry CODE 0 4 4 A 2 1
+bssBANK0 BANK0 1 20 20 26 1 1
 bssBANK3 BANK3 1 190 190 20 1 1
-idataBANK0 CODE 0 70F 70F 10 2 1
-idataBANK1 CODE 0 627 627 1E 2 1
-idataBANK3 CODE 0 645 645 1E 2 1
-strings STRING 0 200 200 96 2 1
-dataBANK0 BANK0 1 3D 3D 10 1 1
-dataBANK1 BANK1 1 BE BE 1E 1 1
-dataBANK3 BANK3 1 1B0 1B0 1E 1 1
-dataCOMMON COMMON 1 76 76 3 1 1
-clrtext CODE 0 741 741 8 2 1
-bssCOMMON COMMON 1 79 79 2 1 1
+idataBANK1 CODE 0 FC4 FC4 3C 2 1
+strings STRING 0 400 400 C1 2 1
+dataBANK1 BANK1 1 A0 A0 3C 1 1
+dataCOMMON COMMON 1 78 78 3 1 1
+clrtext CODE 0 EA1 EA1 8 2 1
+config CONFIG 4 2007 2007 2 2 1
+$C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+reset_vec CODE 0 0 0 3 2 1
+end_init CODE 0 E E 3 2 1
 config CONFIG 4 2007 2007 2 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -62,24 +58,27 @@ config CONFIG 4 2007 2007 2 2 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 53-6F 1
+RAM 64-6F 1
 RAM DC-EF 1
 RAM 110-16F 1
-RAM 1CE-1EF 1
-BANK0 53-6F 1
+RAM 1B0-1EF 1
+BANK0 64-6F 1
 BANK1 DC-EF 1
 BANK2 110-16F 1
-BANK3 1CE-1EF 1
+BANK3 1B0-1EF 1
 CONST 3-3 2
-CONST 1D4-1FF 2
-CONST 74C-1FFF 2
+CONST 3FE-3FF 2
+CONST 7FE-E9D 2
+CONST 1000-1FFF 2
 ENTRY 3-3 2
-ENTRY 1D4-1FF 2
-ENTRY 74C-1FFF 2
+ENTRY 3FE-3FF 2
+ENTRY 7FE-E9D 2
+ENTRY 1000-1FFF 2
 IDLOC 2000-2003 2
 CODE 3-3 2
-CODE 1D4-1FF 2
-CODE 74C-1FFF 2
+CODE 3FE-3FF 2
+CODE 7FE-E9D 2
+CODE 1000-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -87,11 +86,13 @@ SFR3 180-18F 1
 COMMON 7B-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 1D4-1FF 2
-STRCODE 74C-1FFF 2
+STRCODE 3FE-3FF 2
+STRCODE 7FE-E9D 2
+STRCODE 1000-1FFF 2
 STRING 3-3 2
-STRING 1D4-1FF 2
-STRING 74C-1FFF 2
+STRING 3FE-3FF 2
+STRING 7FE-E9D 2
+STRING 1000-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -106,350 +107,453 @@ STRING 74C-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\SmartDoorWiFiLCD.X.production.o
-13 cinit CODE >4428:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-13 cinit CODE >4431:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-13 cinit CODE >4535:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-14 cinit CODE >4536:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-15 cinit CODE >4537:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-16 cinit CODE >4538:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-17 cinit CODE >4539:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-18 cinit CODE >4540:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-19 cinit CODE >4541:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-1A cinit CODE >4542:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-1B cinit CODE >4543:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-1C cinit CODE >4544:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-21 cinit CODE >4548:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-22 cinit CODE >4549:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-23 cinit CODE >4550:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-24 cinit CODE >4551:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-25 cinit CODE >4552:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-26 cinit CODE >4553:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-27 cinit CODE >4554:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-28 cinit CODE >4555:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-29 cinit CODE >4556:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-2A cinit CODE >4557:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-2F cinit CODE >4561:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-30 cinit CODE >4562:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-31 cinit CODE >4563:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-32 cinit CODE >4564:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-33 cinit CODE >4565:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-34 cinit CODE >4566:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-35 cinit CODE >4567:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-36 cinit CODE >4568:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-37 cinit CODE >4569:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-3C cinit CODE >4573:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-41 cinit CODE >4574:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-42 cinit CODE >4575:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-47 cinit CODE >4576:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-48 cinit CODE >4577:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-4D cinit CODE >4578:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-4E cinit CODE >4597:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-4F cinit CODE >4598:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-50 cinit CODE >4599:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-51 cinit CODE >4600:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-52 cinit CODE >4601:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-57 cinit CODE >4604:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-58 cinit CODE >4605:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-59 cinit CODE >4606:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-5A cinit CODE >4607:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-5B cinit CODE >4608:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-60 cinit CODE >4611:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-61 cinit CODE >4612:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-62 cinit CODE >4613:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-63 cinit CODE >4614:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-64 cinit CODE >4615:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-65 cinit CODE >4616:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-66 cinit CODE >4619:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-67 cinit CODE >4620:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-68 cinit CODE >4626:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-68 cinit CODE >4628:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-69 cinit CODE >4629:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-4 intentry CODE >177:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-680 text19 CODE >63:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-680 text19 CODE >64:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-682 text19 CODE >65:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-684 text19 CODE >66:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-68B text19 CODE >66:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-694 text19 CODE >66:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-698 text19 CODE >66:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-69C text19 CODE >67:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-571 text18 CODE >177:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-571 text18 CODE >178:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-57A text18 CODE >178:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-57C text18 CODE >178:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-580 text18 CODE >179:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-586 text18 CODE >180:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-588 text18 CODE >180:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-58C text18 CODE >182:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-58D text18 CODE >187:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-590 text18 CODE >187:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-592 text18 CODE >187:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-596 text18 CODE >188:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-59B text18 CODE >189:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-59D text18 CODE >192:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-6B6 text17 CODE >10:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6B6 text17 CODE >13:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6B9 text17 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6BA text17 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6BB text17 CODE >17:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6BC text17 CODE >19:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6BD text17 CODE >20:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6C0 text17 CODE >22:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6C3 text17 CODE >23:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6C4 text17 CODE >25:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6C7 text17 CODE >27:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6C8 text17 CODE >30:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6CB text17 CODE >31:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6CC text17 CODE >32:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6CD text17 CODE >33:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-71F text16 CODE >8:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_pulse_clock.c
-71F text16 CODE >10:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_pulse_clock.c
-722 text16 CODE >11:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_pulse_clock.c
-729 text16 CODE >12:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_pulse_clock.c
-72C text16 CODE >13:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_pulse_clock.c
-32A text15 CODE >9:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-32D text15 CODE >11:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-32E text15 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-331 text15 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-334 text15 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-340 text15 CODE >15:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-343 text15 CODE >15:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-346 text15 CODE >15:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-353 text15 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-356 text15 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-359 text15 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-365 text15 CODE >17:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-368 text15 CODE >17:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-36B text15 CODE >17:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-376 text15 CODE >20:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-37B text15 CODE >23:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-380 text15 CODE >23:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-383 text15 CODE >23:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-38F text15 CODE >24:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-392 text15 CODE >24:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-395 text15 CODE >24:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-3A2 text15 CODE >25:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-3A4 text15 CODE >25:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-3AF text15 CODE >26:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-3B8 text15 CODE >29:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-3BD text15 CODE >30:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
-5A8 text14 CODE >9:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_cursor_set.c
-5AB text14 CODE >12:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_cursor_set.c
-5B4 text14 CODE >13:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_cursor_set.c
-5BE text14 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_cursor_set.c
-5C8 text14 CODE >15:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_cursor_set.c
-5D2 text14 CODE >18:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_cursor_set.c
-5D8 text14 CODE >19:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_cursor_set.c
-6E5 text13 CODE >7:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_clear.c
-6E5 text13 CODE >10:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_clear.c
-6EB text13 CODE >13:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_clear.c
-6F5 text13 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_clear.c
-6FB text13 CODE >17:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_clear.c
-44A text12 CODE >18:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-44A text12 CODE >21:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-450 text12 CODE >22:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-456 text12 CODE >23:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-45C text12 CODE >24:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-462 text12 CODE >25:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-468 text12 CODE >26:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-46E text12 CODE >33:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-479 text12 CODE >36:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-47F text12 CODE >39:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-484 text12 CODE >42:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-48E text12 CODE >45:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-493 text12 CODE >48:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-499 text12 CODE >51:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-49E text12 CODE >54:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-4A4 text12 CODE >57:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-4A9 text12 CODE >60:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-4AF text12 CODE >61:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-4B5 text12 CODE >62:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-4BB text12 CODE >63:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-4C0 text12 CODE >64:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
-296 text11 CODE >9:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-299 text11 CODE >11:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-29A text11 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-29D text11 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-2A0 text11 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-2AC text11 CODE >15:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-2AF text11 CODE >15:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-2B2 text11 CODE >15:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-2BF text11 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-2C2 text11 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-2C5 text11 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-2D1 text11 CODE >17:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-2D4 text11 CODE >17:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-2D7 text11 CODE >17:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-2E2 text11 CODE >20:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-2E7 text11 CODE >23:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-2EC text11 CODE >23:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-2EF text11 CODE >23:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-2FB text11 CODE >24:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-2FE text11 CODE >24:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-301 text11 CODE >24:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-30E text11 CODE >25:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-310 text11 CODE >25:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-31B text11 CODE >26:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-324 text11 CODE >29:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-329 text11 CODE >30:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
-737 text10 CODE >8:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_char.c
-73A text10 CODE >11:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_char.c
-740 text10 CODE >12:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_char.c
-601 text9 CODE >9:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
-604 text9 CODE >12:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
-606 text9 CODE >13:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
-613 text9 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
-622 text9 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
-626 text9 CODE >15:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
-72D text8 CODE >58:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-730 text8 CODE >60:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-734 text8 CODE >61:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-736 text8 CODE >62:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-5D9 text7 CODE >75:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-5D9 text7 CODE >77:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-5DA text7 CODE >78:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-5EC text7 CODE >78:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-5F0 text7 CODE >77:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-5FC text7 CODE >77:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-600 text7 CODE >79:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6CE text6 CODE >81:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6CE text6 CODE >84:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6D9 text6 CODE >88:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-6E4 text6 CODE >89:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
-3BE text5 CODE >71:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-3BE text5 CODE >72:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-3D5 text5 CODE >77:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-3D7 text5 CODE >78:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-3DB text5 CODE >79:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-3E1 text5 CODE >79:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-3E4 text5 CODE >79:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-3EB text5 CODE >81:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-3ED text5 CODE >82:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-3F3 text5 CODE >82:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-3F6 text5 CODE >82:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-3FE text5 CODE >83:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-402 text5 CODE >83:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-405 text5 CODE >83:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-40D text5 CODE >84:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-410 text5 CODE >84:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-413 text5 CODE >84:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-420 text5 CODE >86:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-422 text5 CODE >86:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-42B text5 CODE >86:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-42F text5 CODE >86:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-433 text5 CODE >87:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-437 text5 CODE >87:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-440 text5 CODE >87:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-444 text5 CODE >87:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-448 text5 CODE >89:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-449 text5 CODE >90:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-69D text4 CODE >3:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strchr.c
-6A0 text4 CODE >5:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strchr.c
-6A0 text4 CODE >6:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strchr.c
-6A5 text4 CODE >6:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strchr.c
-6A9 text4 CODE >7:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strchr.c
-6AB text4 CODE >9:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strchr.c
-6B4 text4 CODE >10:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strchr.c
-6B5 text4 CODE >11:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strchr.c
-663 text3 CODE >5:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strlen.c
-666 text3 CODE >7:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strlen.c
-668 text3 CODE >8:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strlen.c
-669 text3 CODE >9:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strlen.c
-66D text3 CODE >8:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strlen.c
-675 text3 CODE >8:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strlen.c
-679 text3 CODE >11:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strlen.c
-67F text3 CODE >12:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strlen.c
-4C1 text2 CODE >3:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
-4C4 text2 CODE >5:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
-4C7 text2 CODE >5:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
-4CB text2 CODE >5:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
-4D5 text2 CODE >6:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
-4E0 text2 CODE >6:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
-4F3 text2 CODE >6:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
-509 text2 CODE >6:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
-50D text2 CODE >7:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
-51D text2 CODE >7:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
-51F text2 CODE >8:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
-520 text1 CODE >4:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
-523 text1 CODE >6:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
-528 text1 CODE >7:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
-534 text1 CODE >8:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
-535 text1 CODE >9:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
-549 text1 CODE >10:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
-54B text1 CODE >11:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
-562 text1 CODE >8:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
-56F text1 CODE >14:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
-570 text1 CODE >15:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
-6C maintext CODE >92:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-6C maintext CODE >93:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-70 maintext CODE >94:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-73 maintext CODE >96:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-78 maintext CODE >97:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-7D maintext CODE >98:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-87 maintext CODE >99:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-8D maintext CODE >100:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-9B maintext CODE >101:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-A5 maintext CODE >102:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-AB maintext CODE >103:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-B9 maintext CODE >105:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-BE maintext CODE >106:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-C8 maintext CODE >107:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-CE maintext CODE >108:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-DC maintext CODE >112:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-E1 maintext CODE >113:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-EB maintext CODE >114:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-F6 maintext CODE >115:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-FC maintext CODE >117:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-106 maintext CODE >118:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-111 maintext CODE >120:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-11E maintext CODE >121:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-123 maintext CODE >122:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-127 maintext CODE >123:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-130 maintext CODE >127:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-13E maintext CODE >128:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-143 maintext CODE >129:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-14D maintext CODE >130:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-153 maintext CODE >131:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-15D maintext CODE >132:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-163 maintext CODE >133:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-171 maintext CODE >134:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-17C maintext CODE >135:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-187 maintext CODE >137:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-195 maintext CODE >141:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-195 maintext CODE >142:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-19A maintext CODE >143:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-1A4 maintext CODE >144:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-1AA maintext CODE >145:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-1B4 maintext CODE >150:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-1BC maintext CODE >151:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-1C8 maintext CODE >152:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-741 clrtext CODE >4584:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-741 clrtext CODE >4585:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-742 clrtext CODE >4586:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-742 clrtext CODE >4587:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-743 clrtext CODE >4588:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-744 clrtext CODE >4589:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-745 clrtext CODE >4590:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-746 clrtext CODE >4591:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-747 clrtext CODE >4592:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-748 clrtext CODE >4593:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-6FC inittext CODE >4509:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-6FC inittext CODE >4510:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-6FD inittext CODE >4511:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-6FE inittext CODE >4512:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-6FF inittext CODE >4513:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-700 inittext CODE >4520:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-700 inittext CODE >4521:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-705 inittext CODE >4522:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-706 inittext CODE >4523:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-707 inittext CODE >4524:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-708 inittext CODE >4525:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-709 inittext CODE >4526:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-70A inittext CODE >4527:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-70B inittext CODE >4528:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-70C inittext CODE >4529:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-70D inittext CODE >4530:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
-70E inittext CODE >4531:C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_1.s
+11 cinit CODE >4470:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+11 cinit CODE >4473:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+11 cinit CODE >4561:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+12 cinit CODE >4562:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+13 cinit CODE >4563:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+14 cinit CODE >4564:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+15 cinit CODE >4565:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+16 cinit CODE >4566:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+17 cinit CODE >4567:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+18 cinit CODE >4568:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+19 cinit CODE >4569:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+1A cinit CODE >4570:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+1F cinit CODE >4574:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+24 cinit CODE >4575:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+25 cinit CODE >4576:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+2A cinit CODE >4577:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+2B cinit CODE >4578:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+30 cinit CODE >4579:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+31 cinit CODE >4598:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+32 cinit CODE >4599:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+33 cinit CODE >4600:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+34 cinit CODE >4601:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+35 cinit CODE >4602:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+3A cinit CODE >4605:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+3B cinit CODE >4606:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+3C cinit CODE >4607:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+3D cinit CODE >4608:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+3E cinit CODE >4609:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+43 cinit CODE >4615:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+43 cinit CODE >4617:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+44 cinit CODE >4618:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+4 intentry CODE >169:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F43 text21 CODE >169:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F43 text21 CODE >170:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F4C text21 CODE >170:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F4E text21 CODE >170:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F52 text21 CODE >171:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F58 text21 CODE >172:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F5A text21 CODE >172:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F5E text21 CODE >174:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F5F text21 CODE >181:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F24 text20 CODE >63:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F24 text20 CODE >64:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F28 text20 CODE >65:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F2A text20 CODE >66:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F31 text20 CODE >66:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F3A text20 CODE >66:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F3E text20 CODE >66:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F42 text20 CODE >67:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F0C text19 CODE >10:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+F0C text19 CODE >13:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+F0F text19 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+F10 text19 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+F11 text19 CODE >17:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+F12 text19 CODE >19:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+F13 text19 CODE >20:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+F16 text19 CODE >22:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+F19 text19 CODE >23:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+F1A text19 CODE >25:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+F1D text19 CODE >27:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+F1E text19 CODE >30:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+F21 text19 CODE >31:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+F22 text19 CODE >32:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+F23 text19 CODE >33:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+EB3 text18 CODE >8:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_pulse_clock.c
+EB3 text18 CODE >10:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_pulse_clock.c
+EB6 text18 CODE >11:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_pulse_clock.c
+EBA text18 CODE >12:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_pulse_clock.c
+EBD text18 CODE >13:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_pulse_clock.c
+5F2 text17 CODE >9:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+5F3 text17 CODE >11:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+5F6 text17 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+5F9 text17 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+5FC text17 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+608 text17 CODE >15:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+60B text17 CODE >15:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+60E text17 CODE >15:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+61B text17 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+61E text17 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+621 text17 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+62D text17 CODE >17:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+630 text17 CODE >17:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+633 text17 CODE >17:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+63E text17 CODE >20:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+643 text17 CODE >23:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+646 text17 CODE >23:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+649 text17 CODE >23:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+657 text17 CODE >24:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+65A text17 CODE >24:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+65D text17 CODE >24:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+66A text17 CODE >25:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+66C text17 CODE >25:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+677 text17 CODE >26:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+680 text17 CODE >29:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+685 text17 CODE >30:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+F93 text16 CODE >9:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_cursor_set.c
+F96 text16 CODE >12:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_cursor_set.c
+F9F text16 CODE >13:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_cursor_set.c
+FA9 text16 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_cursor_set.c
+FB3 text16 CODE >15:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_cursor_set.c
+FBD text16 CODE >18:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_cursor_set.c
+FC3 text16 CODE >19:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_cursor_set.c
+EDF text15 CODE >7:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_clear.c
+EDF text15 CODE >10:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_clear.c
+EE5 text15 CODE >13:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_clear.c
+EEE text15 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_clear.c
+EF4 text15 CODE >17:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_clear.c
+70D text14 CODE >18:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+70D text14 CODE >21:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+713 text14 CODE >22:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+719 text14 CODE >23:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+71F text14 CODE >24:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+725 text14 CODE >25:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+72B text14 CODE >26:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+731 text14 CODE >33:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+73C text14 CODE >36:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+742 text14 CODE >39:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+747 text14 CODE >42:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+751 text14 CODE >45:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+756 text14 CODE >48:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+75C text14 CODE >51:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+761 text14 CODE >54:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+767 text14 CODE >57:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+76C text14 CODE >60:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+772 text14 CODE >61:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+778 text14 CODE >62:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+77E text14 CODE >63:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+783 text14 CODE >64:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
+55E text13 CODE >9:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+55F text13 CODE >11:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+562 text13 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+565 text13 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+568 text13 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+574 text13 CODE >15:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+577 text13 CODE >15:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+57A text13 CODE >15:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+587 text13 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+58A text13 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+58D text13 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+599 text13 CODE >17:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+59C text13 CODE >17:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+59F text13 CODE >17:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+5AA text13 CODE >20:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+5AF text13 CODE >23:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+5B2 text13 CODE >23:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+5B5 text13 CODE >23:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+5C3 text13 CODE >24:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+5C6 text13 CODE >24:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+5C9 text13 CODE >24:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+5D6 text13 CODE >25:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+5D8 text13 CODE >25:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+5E3 text13 CODE >26:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+5EC text13 CODE >29:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+5F1 text13 CODE >30:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+F68 text12 CODE >9:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
+F68 text12 CODE >12:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
+F6A text12 CODE >13:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
+F6E text12 CODE >13:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
+F7B text12 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
+F85 text12 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
+F8E text12 CODE >14:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
+F92 text12 CODE >15:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
+4C1 text11 CODE >5:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4C1 text11 CODE >13:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4C4 text11 CODE >14:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4C8 text11 CODE >15:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4CD text11 CODE >15:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4CF text11 CODE >15:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4D1 text11 CODE >15:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4D3 text11 CODE >16:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4D5 text11 CODE >17:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4D5 text11 CODE >18:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4D9 text11 CODE >19:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4DE text11 CODE >19:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4E0 text11 CODE >19:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4E2 text11 CODE >19:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4E4 text11 CODE >20:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4E8 text11 CODE >22:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4F0 text11 CODE >23:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4F4 text11 CODE >23:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4F8 text11 CODE >24:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4FA text11 CODE >25:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4FB text11 CODE >26:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+4FD text11 CODE >26:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+504 text11 CODE >27:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+508 text11 CODE >25:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+50C text11 CODE >30:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+50E text11 CODE >30:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+515 text11 CODE >31:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+517 text11 CODE >31:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+51B text11 CODE >31:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+51F text11 CODE >31:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+523 text11 CODE >31:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+527 text11 CODE >32:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+52A text11 CODE >32:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+52E text11 CODE >32:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+532 text11 CODE >32:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+535 text11 CODE >33:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+536 text11 CODE >35:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+537 text11 CODE >35:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+53D text11 CODE >35:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+53F text11 CODE >36:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+545 text11 CODE >38:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+54A text11 CODE >39:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+54F text11 CODE >39:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+551 text11 CODE >39:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+553 text11 CODE >39:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+555 text11 CODE >40:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+55D text11 CODE >41:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\aldiv.c
+686 text10 CODE >5:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+686 text10 CODE >12:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+687 text10 CODE >13:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+68D text10 CODE >14:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+692 text10 CODE >14:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+694 text10 CODE >14:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+696 text10 CODE >14:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+698 text10 CODE >15:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+69A text10 CODE >16:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+69A text10 CODE >17:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+69E text10 CODE >18:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6A3 text10 CODE >18:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6A5 text10 CODE >18:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6A7 text10 CODE >18:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6A9 text10 CODE >19:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6AD text10 CODE >19:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6B1 text10 CODE >20:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6B3 text10 CODE >21:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6B4 text10 CODE >22:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6B6 text10 CODE >22:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6BD text10 CODE >23:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6C1 text10 CODE >21:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6C5 text10 CODE >26:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6C7 text10 CODE >26:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6CB text10 CODE >26:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6CF text10 CODE >26:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6D3 text10 CODE >26:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6D7 text10 CODE >27:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6DA text10 CODE >27:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6DE text10 CODE >27:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6E2 text10 CODE >27:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6E5 text10 CODE >28:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6E6 text10 CODE >28:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6EC text10 CODE >28:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6EE text10 CODE >29:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6F4 text10 CODE >31:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6F9 text10 CODE >32:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+6FE text10 CODE >32:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+700 text10 CODE >32:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+702 text10 CODE >32:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+704 text10 CODE >33:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+70C text10 CODE >34:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\almod.c
+397 text9 CODE >15:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+397 text9 CODE >119:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+39F text9 CODE >121:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3A5 text9 CODE >122:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3A8 text9 CODE >122:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3A9 text9 CODE >122:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3AB text9 CODE >122:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3AF text9 CODE >122:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3B0 text9 CODE >122:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3B2 text9 CODE >122:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3B6 text9 CODE >122:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3B7 text9 CODE >122:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3B9 text9 CODE >122:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3BC text9 CODE >123:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3BE text9 CODE >123:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3C5 text9 CODE >124:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3C6 text9 CODE >124:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3CC text9 CODE >124:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3CE text9 CODE >125:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3D2 text9 CODE >125:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3D6 text9 CODE >128:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+3DE text9 CODE >129:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
+26C text8 CODE >16:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+26C text8 CODE >19:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+26F text8 CODE >22:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+292 text8 CODE >25:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+29A text8 CODE >27:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+29E text8 CODE >28:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+2AB text8 CODE >28:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+2B2 text8 CODE >29:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+2D4 text8 CODE >34:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+2D8 text8 CODE >34:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+2DD text8 CODE >35:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+2E3 text8 CODE >36:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+2E8 text8 CODE >41:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+2F0 text8 CODE >42:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+2F3 text8 CODE >43:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+312 text8 CODE >44:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+318 text8 CODE >44:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+31C text8 CODE >45:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+33A text8 CODE >46:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+33E text8 CODE >47:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+343 text8 CODE >49:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
+EA9 text7 CODE >58:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+EAA text7 CODE >60:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+EB0 text7 CODE >61:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+EB2 text7 CODE >62:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+3DF text6 CODE >75:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+3E0 text6 CODE >77:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+3E1 text6 CODE >78:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+3F1 text6 CODE >77:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+3F9 text6 CODE >77:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+3FD text6 CODE >79:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+EBE text5 CODE >81:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+EBF text5 CODE >84:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+EC5 text5 CODE >88:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+ECB text5 CODE >89:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\esp8266.c
+EF5 text4 CODE >3:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strchr.c
+EF6 text4 CODE >5:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strchr.c
+EF6 text4 CODE >6:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strchr.c
+EFB text4 CODE >6:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strchr.c
+EFF text4 CODE >7:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strchr.c
+F01 text4 CODE >9:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strchr.c
+F0A text4 CODE >10:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strchr.c
+F0B text4 CODE >11:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strchr.c
+7E3 text3 CODE >5:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strlen.c
+7E4 text3 CODE >7:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strlen.c
+7E6 text3 CODE >8:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strlen.c
+7E7 text3 CODE >9:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strlen.c
+7EB text3 CODE >8:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strlen.c
+7F3 text3 CODE >8:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strlen.c
+7F7 text3 CODE >11:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strlen.c
+7FD text3 CODE >12:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strlen.c
+784 text2 CODE >3:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
+787 text2 CODE >5:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
+78A text2 CODE >5:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
+78E text2 CODE >5:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
+798 text2 CODE >6:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
+7A3 text2 CODE >6:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
+7B6 text2 CODE >6:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
+7CC text2 CODE >6:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
+7D0 text2 CODE >7:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
+7E0 text2 CODE >7:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
+7E2 text2 CODE >8:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strncmp.c
+344 text1 CODE >4:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
+347 text1 CODE >6:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
+34C text1 CODE >7:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
+358 text1 CODE >8:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
+359 text1 CODE >9:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
+36B text1 CODE >10:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
+36F text1 CODE >11:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
+388 text1 CODE >8:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
+395 text1 CODE >14:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
+396 text1 CODE >15:C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
+47 maintext CODE >71:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+47 maintext CODE >72:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+4C maintext CODE >73:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+51 maintext CODE >74:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+59 maintext CODE >75:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+64 maintext CODE >76:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+72 maintext CODE >77:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+7A maintext CODE >78:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+85 maintext CODE >79:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+93 maintext CODE >81:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+98 maintext CODE >82:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+A0 maintext CODE >83:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+AB maintext CODE >84:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+B9 maintext CODE >87:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+BE maintext CODE >88:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+C6 maintext CODE >89:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+CC maintext CODE >90:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+D7 maintext CODE >92:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+DF maintext CODE >93:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+E5 maintext CODE >94:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F3 maintext CODE >95:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+F8 maintext CODE >96:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+100 maintext CODE >97:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+10B maintext CODE >98:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+113 maintext CODE >99:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+11E maintext CODE >100:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+12C maintext CODE >101:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+131 maintext CODE >103:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+134 maintext CODE >104:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+137 maintext CODE >106:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+138 maintext CODE >107:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+139 maintext CODE >109:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+13D maintext CODE >110:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+141 maintext CODE >112:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+144 maintext CODE >117:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+147 maintext CODE >118:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+14B maintext CODE >120:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+153 maintext CODE >122:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+15B maintext CODE >123:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+166 maintext CODE >124:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+16E maintext CODE >125:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+17D maintext CODE >126:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+185 maintext CODE >127:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+190 maintext CODE >127:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+194 maintext CODE >128:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+19F maintext CODE >129:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+1A2 maintext CODE >130:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+1B0 maintext CODE >131:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+1B3 maintext CODE >133:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+1B4 maintext CODE >134:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+1B5 maintext CODE >135:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+1B9 maintext CODE >136:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+1C1 maintext CODE >137:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+1CB maintext CODE >139:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+1D3 maintext CODE >140:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+1DE maintext CODE >141:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+1E6 maintext CODE >142:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+1F5 maintext CODE >143:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+1FA maintext CODE >143:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+1FC maintext CODE >143:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+201 maintext CODE >133:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+204 maintext CODE >133:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+206 maintext CODE >133:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+20A maintext CODE >147:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+212 maintext CODE >148:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+21D maintext CODE >149:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+22B maintext CODE >150:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+22E maintext CODE >151:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+23C maintext CODE >152:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+23F maintext CODE >154:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+244 maintext CODE >155:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+245 maintext CODE >156:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+250 maintext CODE >157:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+255 maintext CODE >161:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+263 maintext CODE >162:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+EA1 clrtext CODE >4585:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+EA1 clrtext CODE >4586:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+EA2 clrtext CODE >4587:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+EA2 clrtext CODE >4588:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+EA3 clrtext CODE >4589:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+EA4 clrtext CODE >4590:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+EA5 clrtext CODE >4591:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+EA6 clrtext CODE >4592:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+EA7 clrtext CODE >4593:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+EA8 clrtext CODE >4594:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+ECC inittext CODE >4535:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+ECC inittext CODE >4536:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+ECD inittext CODE >4537:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+ECE inittext CODE >4538:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+ECF inittext CODE >4539:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+ED0 inittext CODE >4546:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+ED0 inittext CODE >4547:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+ED5 inittext CODE >4548:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+ED6 inittext CODE >4549:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+ED7 inittext CODE >4550:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+ED8 inittext CODE >4551:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+ED9 inittext CODE >4552:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+EDA inittext CODE >4553:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+EDB inittext CODE >4554:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+EDC inittext CODE >4555:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+EDD inittext CODE >4556:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
+EDE inittext CODE >4557:C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_1.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -463,79 +567,85 @@ FC maintext CODE >117:C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoor
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
-__LdataBANK0 0 0 ABS 0 dataBANK0 -
 __LdataBANK1 0 0 ABS 0 dataBANK1 -
-__LdataBANK3 0 0 ABS 0 dataBANK3 -
-__Hspace_0 74C 0 ABS 0 - -
-__Hspace_1 1CE 0 ABS 0 - -
+__Hspace_0 1000 0 ABS 0 - -
+__Hspace_1 1B0 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
-__HidataBANK0 0 0 ABS 0 idataBANK0 -
 __HidataBANK1 0 0 ABS 0 idataBANK1 -
-__HidataBANK3 0 0 ABS 0 idataBANK3 -
-keypad_scan@keypad 24 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __L__absolute__ 0 0 ABS 0 __absolute__ -
-LCD_cursor_set@row 25 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-main@x 3B 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+LCD_cursor_set@row 46 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_LCD_write_variable 688 0 CODE 0 text8 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _CREN C4 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _OERR C1 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _PEIE 5E 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _RCIF 65 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _TXIF 64 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-_main D8 0 CODE 0 maintext dist/default/production\SmartDoorWiFiLCD.X.production.o
-_test 51 0 BANK0 1 bssBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+_main 8E 0 CODE 0 maintext dist/default/production\SmartDoorWiFiLCD.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
-___stack_hi 0 0 STACK 2 stack C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-___stack_lo 0 0 STACK 2 stack C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-start 20 0 CODE 0 init C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-__HbssCOMMON 0 0 ABS 0 bssCOMMON -
-ClearStringReceive@i 70 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
-__LidataBANK0 0 0 ABS 0 idataBANK0 -
+___stack_hi 0 0 STACK 2 stack C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+___stack_lo 0 0 STACK 2 stack C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+start 1C 0 CODE 0 init C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+ClearStringReceive@i 73 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+?___lmul 46 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __LidataBANK1 0 0 ABS 0 idataBANK1 -
-__LidataBANK3 0 0 ABS 0 idataBANK3 -
-_LCD_init 894 0 CODE 0 text12 dist/default/production\SmartDoorWiFiLCD.X.production.o
+_LCD_init E1A 0 CODE 0 text14 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-__end_of_LCD_pulse_clock E5A 0 CODE 0 text16 dist/default/production\SmartDoorWiFiLCD.X.production.o
+___almod@sign 75 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_LCD_pulse_clock 1D7C 0 CODE 0 text18 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __HdataCOMMON 0 0 ABS 0 dataCOMMON -
-__end_of_LCD_write_string C4E 0 CODE 0 text9 dist/default/production\SmartDoorWiFiLCD.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-__end_of_LCD_init 982 0 CODE 0 text12 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+__end_of_LCD_write_string 1F26 0 CODE 0 text12 dist/default/production\SmartDoorWiFiLCD.X.production.o
+LCD_write_variable@left_offset 58 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+_LCD_write_variable 4D8 0 CODE 0 text8 dist/default/production\SmartDoorWiFiLCD.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+__end_of_LCD_init F08 0 CODE 0 text14 dist/default/production\SmartDoorWiFiLCD.X.production.o
+___aldiv@divisor 46 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
-_LCD_entry_mode 78 0 COMMON 1 dataCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+_LCD_entry_mode 7A 0 COMMON 1 dataCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+___aldiv@sign 4F 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__pidataCOMMON E92 0 CODE 0 idataCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+__pidataCOMMON 1D3C 0 CODE 0 idataCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+_ADCON0 1F 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
+_ADCON1 9F 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
+_ADRESH 1E 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
+_ADRESL 9E 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 __LdataCOMMON 0 0 ABS 0 dataCOMMON -
-__end_of_SendStringSerially C02 0 CODE 0 text7 dist/default/production\SmartDoorWiFiLCD.X.production.o
-_LCD_pulse_clock E3E 0 CODE 0 text16 dist/default/production\SmartDoorWiFiLCD.X.production.o
-main@key 3C 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_SendStringSerially 7FC 0 CODE 0 text6 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of___lmul 7BE 0 CODE 0 text9 dist/default/production\SmartDoorWiFiLCD.X.production.o
+LCD_write_variable@variable 54 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+_LCD_pulse_clock 1D66 0 CODE 0 text18 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-_LCD_display_control 77 0 COMMON 1 dataCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
-?_strlen 20 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-___stacklo 0 0 ABS 0 - C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-_SendByteSerially E5A 0 CODE 0 text8 dist/default/production\SmartDoorWiFiLCD.X.production.o
+_LCD_display_control 79 0 COMMON 1 dataCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of___aldiv ABC 0 CODE 0 text11 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of___almod E1A 0 CODE 0 text10 dist/default/production\SmartDoorWiFiLCD.X.production.o
+?_strlen 73 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+___stacklo 0 0 ABS 0 - C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+_SendByteSerially 1D52 0 CODE 0 text7 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __LidataCOMMON 0 0 ABS 0 idataCOMMON -
-_SendStringSerially BB2 0 CODE 0 text7 dist/default/production\SmartDoorWiFiLCD.X.production.o
-start_initialization 26 0 CODE 0 cinit dist/default/production\SmartDoorWiFiLCD.X.production.o
-__end_of_KeyPadChar 442 0 STRING 0 strings dist/default/production\SmartDoorWiFiLCD.X.production.o
+_SendStringSerially 7BE 0 CODE 0 text6 dist/default/production\SmartDoorWiFiLCD.X.production.o
+start_initialization 22 0 CODE 0 cinit dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_KeyPadChar 842 0 STRING 0 strings dist/default/production\SmartDoorWiFiLCD.X.production.o
 _TRISDbits 88 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
-LCD_write_command@command 23 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-LCD_write_char@character 24 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-modff@F522 4D 0 BANK0 1 bssBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__end_of_LCD_write_command 77C 0 CODE 0 text15 dist/default/production\SmartDoorWiFiLCD.X.production.o
-clear_ram0 E82 0 CODE 0 clrtext dist/default/production\SmartDoorWiFiLCD.X.production.o
-__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+___aldiv@quotient 50 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+LCD_write_command@command 76 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+modff@F522 20 0 BANK0 1 bssBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+_GO_nDONE F9 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
+___almod@dividend 4A 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_LCD_write_command D0C 0 CODE 0 text17 dist/default/production\SmartDoorWiFiLCD.X.production.o
+clear_ram0 1D42 0 CODE 0 clrtext dist/default/production\SmartDoorWiFiLCD.X.production.o
+__pcstackBANK0 46 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+_TRISA0 428 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _TRISB0 430 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _TRISB1 431 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _TRISB2 432 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
@@ -546,37 +656,38 @@ _TRISB6 436 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _TRISB7 437 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _TRISC6 43E 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _TRISC7 43F 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
-_keypad_scan 77C 0 CODE 0 text5 dist/default/production\SmartDoorWiFiLCD.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
+___int_sp 0 0 STACK 2 stack C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
-__Hcinit D8 0 CODE 0 cinit -
-__end_of_strchr D6C 0 CODE 0 text4 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__end_of_strlen D00 0 CODE 0 text3 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__end_of_strstr AE2 0 CODE 0 text1 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__end_of_LCD_clear DF8 0 CODE 0 text13 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__Hcinit 8E 0 CODE 0 cinit -
+__end_of_strchr 1E18 0 CODE 0 text4 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_strlen FFC 0 CODE 0 text3 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_strstr 72E 0 CODE 0 text1 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_LCD_clear 1DEA 0 CODE 0 text15 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Hstack 0 0 STACK 2 stack -
-__stringbase 41E 0 STRING 0 strings dist/default/production\SmartDoorWiFiLCD.X.production.o
+__stringbase 81E 0 STRING 0 strings dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Hmaintext 0 0 ABS 0 maintext -
+LCD_write_variable@i 59 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 4 config -
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 ABS 0 bank3 -
-__Lcinit 26 0 CODE 0 cinit -
+__Lcinit 22 0 CODE 0 cinit -
 __Lstack 0 0 STACK 2 stack -
-__end_of_SendByteSerially E6E 0 CODE 0 text8 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_SendByteSerially 1D66 0 CODE 0 text7 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Linittext 0 0 ABS 0 inittext -
+_PORTBbits 6 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _PORTDbits 8 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
-__end_of_strncmp A40 0 CODE 0 text2 dist/default/production\SmartDoorWiFiLCD.X.production.o
-_LCD_clear DCA 0 CODE 0 text13 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_strncmp FC6 0 CODE 0 text2 dist/default/production\SmartDoorWiFiLCD.X.production.o
+_LCD_clear 1DBE 0 CODE 0 text15 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hheap 0 0 HEAP 7 heap -
-__Hinit 20 0 CODE 0 init -
+__Hinit 1C 0 CODE 0 init -
 __Hsfr0 0 0 ABS 0 sfr0 -
 __Hsfr1 0 0 ABS 0 sfr1 -
 __Hsfr2 0 0 ABS 0 sfr2 -
@@ -585,16 +696,17 @@ __Htext 0 0 ABS 0 text -
 __Labs1 0 0 ABS 0 abs1 -
 __Lcode 0 0 ABS 0 code -
 __Lheap 0 0 HEAP 7 heap -
-__Linit 20 0 CODE 0 init -
+__Linit 1C 0 CODE 0 init -
 __Lsfr0 0 0 ABS 0 sfr0 -
 __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
+___lmul 72E 0 CODE 0 text9 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _GIE 5F 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
-_ISR AE2 0 CODE 0 text18 dist/default/production\SmartDoorWiFiLCD.X.production.o
+_ISR 1E86 0 CODE 0 text21 dist/default/production\SmartDoorWiFiLCD.X.production.o
 _RB0 30 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _RB1 31 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _RB2 32 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
@@ -603,119 +715,121 @@ _RB4 34 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _RB5 35 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _RB6 36 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _RB7 37 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
-__S0 74C 0 ABS 0 - -
-__S1 1CE 0 ABS 0 - -
+__S0 1000 0 ABS 0 - -
+__S1 1B0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_pos 79 0 COMMON 1 bssCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
-LCD_write_data@data 23 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-keypad_scan@F2382 3D 0 BANK0 1 dataBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+_pos 26 0 BANK0 1 bssBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+___almod@counter 74 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+LCD_write_data@data 76 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+LCD_write_variable@temp_variable 5B 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
-_LCD_write_char E6E 0 CODE 0 text10 dist/default/production\SmartDoorWiFiLCD.X.production.o
-_LCD_write_data 52C 0 CODE 0 text11 dist/default/production\SmartDoorWiFiLCD.X.production.o
+_LCD_write_data ABC 0 CODE 0 text13 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __HidataCOMMON 0 0 ABS 0 idataCOMMON -
-_LCD_write_command 654 0 CODE 0 text15 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__end_of_ISR B50 0 CODE 0 text18 dist/default/production\SmartDoorWiFiLCD.X.production.o
+_LCD_write_command BE4 0 CODE 0 text17 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_ISR 1ED0 0 CODE 0 text21 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-__stringtab 400 0 STRING 0 strings dist/default/production\SmartDoorWiFiLCD.X.production.o
-strchr@c 20 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-strchr@s 22 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-strlen@a 22 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-strlen@s 23 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-strstr@h 2B 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-strstr@n 26 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__pdataBANK0 3D 0 BANK0 1 dataBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__pdataBANK1 BE 0 BANK1 1 dataBANK1 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__pdataBANK3 1B0 0 BANK3 1 dataBANK3 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__stringtab 800 0 STRING 0 strings dist/default/production\SmartDoorWiFiLCD.X.production.o
+strchr@c 73 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+strchr@s 75 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+strlen@a 75 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+strlen@s 76 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+strstr@h 4C 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+strstr@n 47 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__pdataBANK1 A0 0 BANK1 1 dataBANK1 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
-__LbssBANK1 0 0 ABS 0 bssBANK1 -
 __LbssBANK3 0 0 ABS 0 bssBANK3 -
 _RCSTAbits 18 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
-LCD_cursor_set@column 24 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-_InitUART D6C 0 CODE 0 text17 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext10 E6E 0 CODE 0 text10 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext11 52C 0 CODE 0 text11 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext12 894 0 CODE 0 text12 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext13 DCA 0 CODE 0 text13 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext14 B50 0 CODE 0 text14 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext15 654 0 CODE 0 text15 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext16 E3E 0 CODE 0 text16 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext17 D6C 0 CODE 0 text17 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext18 AE2 0 CODE 0 text18 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext19 D00 0 CODE 0 text19 dist/default/production\SmartDoorWiFiLCD.X.production.o
-LCD_write_string@i 24 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__pmaintext D8 0 CODE 0 maintext dist/default/production\SmartDoorWiFiLCD.X.production.o
+LCD_cursor_set@column 77 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+_InitUART 1E18 0 CODE 0 text19 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext10 D0C 0 CODE 0 text10 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext11 982 0 CODE 0 text11 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext12 1ED0 0 CODE 0 text12 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext13 ABC 0 CODE 0 text13 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext14 E1A 0 CODE 0 text14 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext15 1DBE 0 CODE 0 text15 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext16 1F26 0 CODE 0 text16 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext17 BE4 0 CODE 0 text17 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext18 1D66 0 CODE 0 text18 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext19 1E18 0 CODE 0 text19 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext20 1E48 0 CODE 0 text20 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext21 1E86 0 CODE 0 text21 dist/default/production\SmartDoorWiFiLCD.X.production.o
+___aldiv 982 0 CODE 0 text11 dist/default/production\SmartDoorWiFiLCD.X.production.o
+___almod D0C 0 CODE 0 text10 dist/default/production\SmartDoorWiFiLCD.X.production.o
+LCD_write_string@i 77 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+__pmaintext 8E 0 CODE 0 maintext dist/default/production\SmartDoorWiFiLCD.X.production.o
+___lmul@multiplier 46 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-strncmp@l 25 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-strncmp@n 21 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-strncmp@r 20 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__end_of_InitUART D9C 0 CODE 0 text17 dist/default/production\SmartDoorWiFiLCD.X.production.o
+strncmp@l 46 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+strncmp@n 74 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+strncmp@r 73 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_InitUART 1E48 0 CODE 0 text19 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Hinittext 0 0 ABS 0 inittext -
-__end_of_LCD_write_char E82 0 CODE 0 text10 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__end_of_LCD_write_data 654 0 CODE 0 text11 dist/default/production\SmartDoorWiFiLCD.X.production.o
-LCD_write_string@string 25 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-_strchr D3A 0 CODE 0 text4 dist/default/production\SmartDoorWiFiLCD.X.production.o
-_strlen CC6 0 CODE 0 text3 dist/default/production\SmartDoorWiFiLCD.X.production.o
-_strstr A40 0 CODE 0 text1 dist/default/production\SmartDoorWiFiLCD.X.production.o
-SendByteSerially@Byte 20 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-_LCD_cursor_set B50 0 CODE 0 text14 dist/default/production\SmartDoorWiFiLCD.X.production.o
-strstr@nl 29 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-_SendCommandAT D9C 0 CODE 0 text6 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__end_of__stringtab 420 0 STRING 0 strings dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_LCD_write_data BE4 0 CODE 0 text13 dist/default/production\SmartDoorWiFiLCD.X.production.o
+LCD_write_string@string 46 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+_strchr 1DEA 0 CODE 0 text4 dist/default/production\SmartDoorWiFiLCD.X.production.o
+_strlen FC6 0 CODE 0 text3 dist/default/production\SmartDoorWiFiLCD.X.production.o
+_strstr 688 0 CODE 0 text1 dist/default/production\SmartDoorWiFiLCD.X.production.o
+SendByteSerially@Byte 73 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+_LCD_cursor_set 1F26 0 CODE 0 text16 dist/default/production\SmartDoorWiFiLCD.X.production.o
+strstr@nl 4A 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+_SendCommandAT 1D7C 0 CODE 0 text5 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of__stringtab 820 0 STRING 0 strings dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__pbssCOMMON 79 0 COMMON 1 bssCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
-_StringReceive A0 0 BANK1 1 bssBANK1 dist/default/production\SmartDoorWiFiLCD.X.production.o
-init_fetch0 DF8 0 CODE 0 inittext dist/default/production\SmartDoorWiFiLCD.X.production.o
+_StringReceive 28 0 BANK0 1 bssBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+init_fetch0 1D98 0 CODE 0 inittext dist/default/production\SmartDoorWiFiLCD.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+main@adcResult 62 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
 _PIR1bits C 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
-__Lend_init 20 0 CODE 0 end_init -
+__Lend_init 1C 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-end_of_initialization D0 0 CODE 0 cinit dist/default/production\SmartDoorWiFiLCD.X.production.o
-__Hintentry 20 0 CODE 0 intentry -
+end_of_initialization 86 0 CODE 0 cinit dist/default/production\SmartDoorWiFiLCD.X.production.o
+__Hintentry 1C 0 CODE 0 intentry -
+___almod@divisor 46 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Lstrings 0 0 ABS 0 strings -
-__end_of_ClearStringReceive D3A 0 CODE 0 text19 dist/default/production\SmartDoorWiFiLCD.X.production.o
+?___aldiv 46 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+?___almod 46 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_ClearStringReceive 1E86 0 CODE 0 text20 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Hreset_vec 6 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__HbssBANK1 0 0 ABS 0 bssBANK1 -
 __HbssBANK3 0 0 ABS 0 bssBANK3 -
-__end_of_keypad_scan 894 0 CODE 0 text5 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext1 A40 0 CODE 0 text1 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext2 982 0 CODE 0 text2 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext3 CC6 0 CODE 0 text3 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext4 D3A 0 CODE 0 text4 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext5 77C 0 CODE 0 text5 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext6 D9C 0 CODE 0 text6 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext7 BB2 0 CODE 0 text7 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext8 E5A 0 CODE 0 text8 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__ptext9 C02 0 CODE 0 text9 dist/default/production\SmartDoorWiFiLCD.X.production.o
-keypad_scan@i 34 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-keypad_scan@j 36 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__end_of_LCD_cursor_set BB2 0 CODE 0 text14 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext1 688 0 CODE 0 text1 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext2 F08 0 CODE 0 text2 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext3 FC6 0 CODE 0 text3 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext4 1DEA 0 CODE 0 text4 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext5 1D7C 0 CODE 0 text5 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext6 7BE 0 CODE 0 text6 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext7 1D52 0 CODE 0 text7 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext8 4D8 0 CODE 0 text8 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__ptext9 72E 0 CODE 0 text9 dist/default/production\SmartDoorWiFiLCD.X.production.o
+___aldiv@dividend 4A 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_LCD_cursor_set 1F88 0 CODE 0 text16 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __H__absolute__ 0 0 ABS 0 __absolute__ -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-_strncmp 982 0 CODE 0 text2 dist/default/production\SmartDoorWiFiLCD.X.production.o
-___heap_hi 0 0 ABS 0 - C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-___heap_lo 0 0 ABS 0 - C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-_ClearStringReceive D00 0 CODE 0 text19 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__end_of__initialization D0 0 CODE 0 cinit dist/default/production\SmartDoorWiFiLCD.X.production.o
+_strncmp F08 0 CODE 0 text2 dist/default/production\SmartDoorWiFiLCD.X.production.o
+___heap_hi 0 0 ABS 0 - C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+___heap_lo 0 0 ABS 0 - C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+_ClearStringReceive 1E48 0 CODE 0 text20 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of__initialization 86 0 CODE 0 cinit dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
-__pidataBANK0 E1E 0 CODE 0 idataBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__pidataBANK1 C4E 0 CODE 0 idataBANK1 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__pidataBANK3 C8A 0 CODE 0 idataBANK3 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__pidataBANK1 1F88 0 CODE 0 idataBANK1 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
+___lmul@product 74 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+___lmul@multiplicand 4A 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
 _TXSTAbits 98 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
-__Hend_init 26 0 CODE 0 end_init -
-init_ram0 E00 0 CODE 0 inittext dist/default/production\SmartDoorWiFiLCD.X.production.o
-__end_of_main 3A8 0 CODE 0 maintext dist/default/production\SmartDoorWiFiLCD.X.production.o
+__Hend_init 22 0 CODE 0 end_init -
+init_ram0 1DA0 0 CODE 0 inittext dist/default/production\SmartDoorWiFiLCD.X.production.o
+___aldiv@counter 4E 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_main 4D8 0 CODE 0 maintext dist/default/production\SmartDoorWiFiLCD.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _RCREG 1A 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 _SPBRG 99 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
@@ -724,23 +838,21 @@ _TXREG 19 0 ABS 0 - dist/default/production\SmartDoorWiFiLCD.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\SmartDoorWiFiLCD.X.production.o
-SendStringSerially@st 21 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+SendStringSerially@st 74 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\SmartDoorWiFiLCD.X.production.o
-__HdataBANK0 0 0 ABS 0 dataBANK0 -
 __HdataBANK1 0 0 ABS 0 dataBANK1 -
-__HdataBANK3 0 0 ABS 0 dataBANK3 -
-_LCD_write_string C02 0 CODE 0 text9 dist/default/production\SmartDoorWiFiLCD.X.production.o
-?_strncmp 20 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__initialization 26 0 CODE 0 cinit dist/default/production\SmartDoorWiFiLCD.X.production.o
-__pbssBANK0 4D 0 BANK0 1 bssBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production\SmartDoorWiFiLCD.X.production.o
+_LCD_write_string 1ED0 0 CODE 0 text12 dist/default/production\SmartDoorWiFiLCD.X.production.o
+?_strncmp 73 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+__initialization 22 0 CODE 0 cinit dist/default/production\SmartDoorWiFiLCD.X.production.o
+__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
 __pbssBANK3 190 0 BANK3 1 bssBANK3 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__pdataCOMMON 76 0 COMMON 1 dataCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
-__end_of_SendCommandAT DCA 0 CODE 0 text6 dist/default/production\SmartDoorWiFiLCD.X.production.o
-__pstrings 400 0 STRING 0 strings dist/default/production\SmartDoorWiFiLCD.X.production.o
-SendCommandAT@command 23 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
-___int_stack_hi 0 0 STACK 2 stack C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
-___int_stack_lo 0 0 STACK 2 stack C:\Users\mkska\AppData\Local\Temp\xcAspos.\driver_tmp_12.o
+__pdataCOMMON 78 0 COMMON 1 dataCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+__end_of_SendCommandAT 1D98 0 CODE 0 text5 dist/default/production\SmartDoorWiFiLCD.X.production.o
+__pstrings 800 0 STRING 0 strings dist/default/production\SmartDoorWiFiLCD.X.production.o
+LCD_write_variable@digits 5A 0 BANK0 1 cstackBANK0 dist/default/production\SmartDoorWiFiLCD.X.production.o
+SendCommandAT@command 75 0 COMMON 1 cstackCOMMON dist/default/production\SmartDoorWiFiLCD.X.production.o
+___int_stack_hi 0 0 STACK 2 stack C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
+___int_stack_lo 0 0 STACK 2 stack C:\Users\mkska\AppData\Local\Temp\xcAsfus.\driver_tmp_12.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -766,14 +878,28 @@ ___int_stack_lo 0 0 STACK 2 stack C:\Users\mkska\AppData\Local\Temp\xcAspos.\dri
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text11 0 296 52C 4B6 2
+text4 0 EF5 1DEA 17 2
+text5 0 EBE 1D7C E 2
+text7 0 EA9 1D52 A 2
+text11 0 4C1 982 33D 2
+text12 0 F68 1ED0 2B 2
+text15 0 EDF 1DBE 16 2
+text16 0 F93 1F26 31 2
+text18 0 EB3 1D66 B 2
+text19 0 F0C 1E18 18 2
+text20 0 F24 1E48 1F 2
+text21 0 F43 1E86 25 2
+idataCOMMON 0 E9E 1D3C 3 2
 cstackCOMMON 1 70 70 B 1
-cstackBANK0 1 20 20 33 1
-intentry 0 4 8 1D0 2
+inittext 0 ECC 1D98 13 2
+intentry 0 4 8 3FA 2
 reset_vec 0 0 0 3 2
-bssBANK1 1 A0 A0 3C 1
-bssBANK3 1 190 190 3E 1
-strings 0 200 400 96 2
+bssBANK0 1 20 20 44 1
+bssBANK3 1 190 190 20 1
+idataBANK1 0 FC4 1F88 3C 2
+strings 0 400 800 C1 2
+dataBANK1 1 A0 A0 3C 1
+clrtext 0 EA1 1D42 8 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal
