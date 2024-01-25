@@ -3326,33 +3326,9 @@ void ClearStringReceive() {
         StringReceive[i] = '\0';
 }
 
-
-int test = 0;
-char keypad_scan() {
-    char keypad[4][4] = {{'1', '2', '3', 'A'},
-                         {'4', '5', '6', 'B'},
-                         {'7', '8', '9', 'C'},
-                         {'*', '0', '#', 'D'}};
-
-    for (int i = 0; i < 4; i++) {
-        PORTB = 0xFF;
-        PORTB &= ~(1 << (i + 4));
-
-        for (int j = 0; j < 4; j++) {
-            if (!(PORTB & (1 << j))) {
-                while (!(PORTB & (1 << j)));
-                return keypad[i][j];
-            }
-        }
-    }
-
-    return 0;
-}
+unsigned int adcResult = 0;
 
 void main(void){
-    TRISB = 0xF0;
-    PORTB = 0x00;
-
     LCD_init();
     LCD_clear();
     LCD_cursor_set(1, 1);
@@ -3368,7 +3344,6 @@ void main(void){
     _delay((unsigned long)((1000)*(4000000/4000.0)));
 
 
-
     LCD_clear();
     LCD_cursor_set(1, 1);
     SendCommandAT("AT");
@@ -3376,14 +3351,6 @@ void main(void){
     char x, flag;
     LCD_cursor_set(2, 1);
     SendCommandAT("Waiting to Response");
-    while(1){
-        x = strstr(StringReceive, "OK");
-        if (x != ((void*)0)){
-            test = 1;
-            SendCommandAT(StringReceive);
-            break;
-        }
-    }
     _delay((unsigned long)((1000)*(4000000/4000.0)));
     LCD_clear();
     LCD_cursor_set(1, 1);
@@ -3391,29 +3358,72 @@ void main(void){
     LCD_cursor_set(2, 1);
     LCD_write_string("ESP 8266 Connected");
     _delay((unsigned long)((1000)*(4000000/4000.0)));
-    SendCommandAT("Received OK");
-    SendCommandAT(StringReceive);
-
-    _delay((unsigned long)((1000)*(4000000/4000.0)));
-
-
-
-    int j = 0;
     LCD_clear();
-    LCD_cursor_set(1, 1);
-    LCD_write_string("Enter Key");
-    LCD_cursor_set(2, 1);
+
+    TRISB=0X00;
+    PORTB=0X00;
+
+    PORTBbits.RB7 = 0;
+    PORTBbits.RB6 = 0;
+
+    ADCON1 = 0x80;
+    ADCON0 = 0x01;
+
+    TRISA0 = 1;
+
+    int ival;
 
     while(1){
+        GO_nDONE = 1;
+        while(GO_nDONE);
+
+        unsigned int adcResult = ADRESH << 8 | ADRESL;
+
+        LCD_cursor_set(2, 1);
+        LCD_write_string(StringReceive);
+        LCD_cursor_set(1, 13);
+        LCD_write_variable(adcResult, 4);
+        LCD_cursor_set(1, 1);
+        if(strstr(StringReceive, "Open") != ((void*)0)){
+            LCD_write_string("Door Opened");
+            PORTBbits.RB6 = 1;
+            _delay((unsigned long)((1000)*(4000000/4000.0)));
+            PORTBbits.RB7 = 1;
+
+            while(adcResult > 500){
+                GO_nDONE = 1;
+                while(GO_nDONE);
+                LCD_cursor_set(1, 1);
+                adcResult = ADRESH << 8 | ADRESL;
+
+                LCD_cursor_set(1, 1);
+                LCD_write_string("Check IR SR");
+                LCD_cursor_set(1, 13);
+                LCD_write_variable(adcResult, 4);
+                if(adcResult < 500){
+                    break;
+                }
+            }
+            LCD_cursor_set(1, 1);
+            LCD_write_string("Doned IR SR");
+            _delay((unsigned long)((500)*(4000000/4000.0)));
+            PORTBbits.RB6 = 0;
+            _delay((unsigned long)((1000)*(4000000/4000.0)));
+            PORTBbits.RB7 = 0;
+
+            ClearStringReceive();
+        }else{
+            LCD_write_string("Door Closed");
+            ClearStringReceive();
+        }
 
 
-        char key = keypad_scan();
-        SendCommandAT(key);
-        LCD_write_char(key);
-
+        _delay((unsigned long)((1000)*(4000000/4000.0)));
+        LCD_clear();
 
     }
-# 175 "main.c"
+
+
 }
 
 void __attribute__((picinterrupt(("")))) ISR() {
@@ -3424,11 +3434,8 @@ void __attribute__((picinterrupt(("")))) ISR() {
         RCIF = 0;
 
 
+    }
 
-    }
-    if(pos > 30){
-     ClearStringReceive();
-     pos = 0;
-    }
+
 
 }
