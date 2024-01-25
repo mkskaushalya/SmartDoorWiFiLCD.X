@@ -1,6 +1,6 @@
 /*
  * File:   main.c
- * Author: mkska
+ * Author: Sahan Kaushalya
  *
  * Created on January 5, 2024, 1:23 AM
  */
@@ -22,160 +22,197 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
+#pragma warning disable 520 // disabled LCD warnings
 
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
+
 #include <xc.h>
+
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
-#include "LCD.h"
+
 #include "esp8266.h"
-//#include "KeyPad.h"
+#include "LCD.h"//LCD Library
 
 #define _XTAL_FREQ 4000000    // Set the oscillator frequency (4 MHz)
 
-#pragma warning disable 520
+//IR Sensor
+#define TRISIRSensor TRISBbits.TRISB7
+#define IRSensor PORTBbits.RB7
 
-#define WIFI_NAME                   "Vinh Bac Bo"
-#define PASSWORD                    "barcareal"
-#define API                         "9YDIVRVEGBWI8JNF"
-#define FIELD                       "field1"
-#define WRITE_API_KEY               "9YDIVRVEGBWI8JNF"
-#define OK                          'D'
-#define CANCEL                      'C'
-#define STAR                        '*'
-#define SHARP                       '#'
-#define MODE_DEFAULT                'B'
+//Door lock motor wires
+#define TRISLockV TRISBbits.TRISB6
+#define LockV PORTBbits.RB6
 
-unsigned char StringReceive[30]; // Xau chua gia tri gui, nhan tu USART
+#define TRISLockG TRISBbits.TRISB5
+#define LockG PORTBbits.RB5
+
+
+unsigned char StringReceive[30]; //Received Strings
 unsigned int pos; // StringReceives
-unsigned char WifiName[30]="_";
-unsigned char PassWord[30]="_";
-char mode = MODE_DEFAULT;
 char StringDisplay[32];
-void SetEsp8266AsClient(void);
+int doorStatus = 0;
+int StatusChange = 0;
+//functions defining
+void picInit(void);
+void checkIR(void);
+void openDoor(void);
+void closeDoor(void);
+void ClearStringReceive();
 
-char StringDisplay[32];
-void SetEsp8266AsClient(void);
+
+void main(void){
+    picInit();
+    LCD_clear();
+    
+    while(1){
+        LCD_clear();
+        LCD_cursor_set(2, 1);
+        LCD_write_string("Open Door");
+        openDoor();
+        __delay_ms(5000);
+        LCD_clear();
+        LCD_cursor_set(2, 1);
+        LCD_write_string("Close Door");
+        closeDoor();
+        __delay_ms(5000);
+//        if(StatusChange == 1){
+//            checkIR();
+//            StatusChange = 0;
+//        }
+        
+    }
+
+
+}
+
+void picInit(void){
+    TRISIRSensor = 1; // Set IRSensor as input
+    TRISLockV = 0; // Set IRSensor as output
+    TRISLockG = 0; // Set IRSensor as output
+    
+    InitUART();
+    LCD_init();
+    LCD_clear();
+    LCD_cursor_set(1, 1);
+    LCD_write_string("PIC Initialized");
+    __delay_ms(1000);
+    LCD_clear();
+}
+
+//void checkIR(void){
+//    if(IRSensor == 1 && doorStatus == 0){
+//        LCD_clear();
+//        LCD_cursor_set(1, 1);
+//        LCD_write_string("Please close door");
+//        while(IRSensor == 1);
+//        if(IRSensor == 0 && doorStatus == 0){
+//            closeDoor();
+//        }
+//    }else if(IRSensor == 0 && doorStatus == 0){
+//        closeDoor();
+//    }if(IRSensor == 0 && doorStatus == 1){
+//        if(IRSensor == 0){
+//            LCD_clear();
+//            LCD_cursor_set(1, 1);
+//            LCD_write_string("Unlocked, Open Door");
+//            
+//            //waiting to open door
+//            for(int i = 0; i < 50; i++){//5seconds
+//                if(IRSensor == 1){
+//                    break;
+//                }
+//                __delay_ms(100);
+//            }
+//            
+//            if(IRSensor == 0){//if not opened door, lock door again
+//                doorStatus = 0;
+//                closeDoor();
+//            }else{//waiting to close door again
+//                while(IRSensor == 1);
+//                if(IRSensor == 0){
+//                    doorStatus = 0;
+//                    closeDoor();
+//                }
+//            }            
+//        }
+//    }
+//}
+
+void openDoor(void){
+    if(doorStatus != 1){
+        LCD_clear();
+        doorStatus = 1;
+        LCD_cursor_set(1, 1);
+        LCD_write_string("Door Opening");
+        LockV = 1;
+        LockG = 0;
+        __delay_ms(1500);
+        LCD_clear();
+        LCD_cursor_set(1, 1);
+        LCD_write_string("Door Opened");
+        LockV = 1;
+        LockG = 1;
+    }else{
+        LCD_clear();
+        LCD_cursor_set(1, 1);
+        LCD_write_string("Door Opened Before");
+    }  
+}
+
+void closeDoor(void){
+    if(doorStatus != 0){
+        LCD_clear();
+        doorStatus = 0;
+        
+        LCD_cursor_set(1, 1);
+        LCD_write_string("Door Closing");
+        LockV = 0;
+        LockG = 1;
+        __delay_ms(1500);
+        LCD_clear();
+        LCD_cursor_set(1, 1);
+        LCD_write_string("Door Closed");
+        LockV = 0;
+        LockG = 0;
+        
+    }else{
+        LCD_clear();
+        LCD_cursor_set(1, 1);
+        LCD_write_string("Door Closed Before");        
+    }
+}
+
+
+void __interrupt() ISR() {
+    if (PIR1bits.RCIF == 1 && pos < 30) { // Check if USART RX interrupt flag is set
+        StringReceive[pos] = RCREG; // Read the received data
+        pos++;        
+        RCIF = 0;
+    }
+    
+    if(strstr(StringReceive, "Open") != NULL){
+        doorStatus = 1; 
+        StatusChange = 1;
+        ClearStringReceive();
+    }if(strstr(StringReceive, "Close") != NULL){
+        doorStatus = 0;
+        StatusChange = 1;
+        ClearStringReceive();
+    }
+    
+    if(pos >= 30){
+        ClearStringReceive();
+    }
+    
+}
+
 void ClearStringReceive()    {
     pos = 0;
     for (int i = 0; i < 30; i++)
         StringReceive[i] = '\0';
-}
-
-unsigned int adcResult = 0;
-
-void main(void){
-    LCD_init();
-    LCD_clear();
-    LCD_cursor_set(1, 1);
-    LCD_write_string("LCD_init()");
-    __delay_ms(1000);
-    LCD_cursor_set(1, 1);
-    LCD_write_string("InitKeyPad()");
-    __delay_ms(1000);
-    
-    InitUART();
-    LCD_cursor_set(2, 1);
-    LCD_write_string("UART Init Success");
-    __delay_ms(1000);
-    
-    /*** SENDING COMMANDS ***/
-    LCD_clear();
-    LCD_cursor_set(1, 1);
-    SendCommandAT("AT");
-    LCD_write_string("AT Sent");
-    char x, flag;
-    LCD_cursor_set(2, 1);
-    SendCommandAT("Waiting to Response");
-    __delay_ms(1000);
-    LCD_clear();
-    LCD_cursor_set(1, 1);
-    LCD_write_string("Received OK");
-    LCD_cursor_set(2, 1);
-    LCD_write_string("ESP 8266 Connected");
-    __delay_ms(1000);
-    LCD_clear();
-    //#############################################################
-    TRISB=0X00; //Instruct the MCU that the PORTB pins are used as Output.
-    PORTB=0X00; //Make all LOW;
-
-    PORTBbits.RB7 = 0;
-    PORTBbits.RB6 = 0;
-    
-    ADCON1 = 0x80;  // Set AN0 to analog mode, Vref+ and Vref- are VDD and VSS
-    ADCON0 = 0x01;  // Select channel 0 (AN0)
-    
-    TRISA0 = 1;  
-
-    int ival;
-    
-    while(1){
-        GO_nDONE = 1;
-        while(GO_nDONE);
-        
-        unsigned int adcResult = ADRESH << 8 | ADRESL;
-        
-        LCD_cursor_set(2, 1);
-        LCD_write_string(StringReceive);
-        LCD_cursor_set(1, 13);
-        LCD_write_variable(adcResult, 4);
-        LCD_cursor_set(1, 1);
-        if(strstr(StringReceive, "Open") != NULL){
-            LCD_write_string("Door Opened");
-            PORTBbits.RB6 = 1;
-            __delay_ms(1000);
-            PORTBbits.RB7 = 1;
-            
-            while(adcResult > 500){
-                GO_nDONE = 1;
-                while(GO_nDONE);
-                LCD_cursor_set(1, 1);
-                adcResult = ADRESH << 8 | ADRESL;
-                
-                LCD_cursor_set(1, 1);
-                LCD_write_string("Check IR SR");          
-                LCD_cursor_set(1, 13);
-                LCD_write_variable(adcResult, 4);
-                if(adcResult < 500){
-                    break;
-                }
-            }
-            LCD_cursor_set(1, 1);
-            LCD_write_string("Doned IR SR"); 
-            __delay_ms(500);
-            PORTBbits.RB6 = 0;
-            __delay_ms(1000);
-            PORTBbits.RB7 = 0;
-            
-            ClearStringReceive();
-        }else{
-            LCD_write_string("Door Closed");
-            ClearStringReceive();
-        }
-        
-        
-        __delay_ms(1000);
-        LCD_clear();
-
-    }
-
-
-}
-
-void __interrupt() ISR() {
-    if (PIR1bits.RCIF == 1 && pos < 28) { // Check if USART RX interrupt flag is set
-        StringReceive[pos] = RCREG; // Read the received data
-        pos++;
-        
-        RCIF = 0;
-        // Your code to handle the received data goes here
-        // For example, you can store it in a buffer or perform some processing
-    }
-    
-
-
 }

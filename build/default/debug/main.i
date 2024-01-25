@@ -23,6 +23,8 @@
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
 
+#pragma warning disable 520
+
 
 
 
@@ -2687,7 +2689,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\\pic\\include\\xc.h" 2 3
-# 29 "main.c" 2
+# 31 "main.c" 2
+
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\math.h" 1 3
 # 15 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\math.h" 3
@@ -3045,7 +3048,7 @@ double jn(int, double);
 double y0(double);
 double y1(double);
 double yn(int, double);
-# 30 "main.c" 2
+# 33 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdio.h" 3
@@ -3199,7 +3202,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 31 "main.c" 2
+# 34 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\string.h" 3
@@ -3258,10 +3261,20 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 32 "main.c" 2
+# 35 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdbool.h" 1 3
-# 33 "main.c" 2
+# 36 "main.c" 2
+
+
+# 1 "./esp8266.h" 1
+# 48 "./esp8266.h"
+    void InitUART(void);
+    void SendByteSerially(unsigned char);
+    unsigned char ReceiveByteSerially(void);
+    void SendStringSerially(unsigned char*);
+    void SendCommandAT(unsigned char*);
+# 38 "main.c" 2
 
 # 1 "./LCD.h" 1
 # 66 "./LCD.h"
@@ -3293,149 +3306,130 @@ void LCD_write_float(float, uint8_t, uint8_t);
 
 extern uint8_t LCD_display_control;
 extern uint8_t LCD_entry_mode;
-# 34 "main.c" 2
-
-# 1 "./esp8266.h" 1
-# 48 "./esp8266.h"
-    void InitUART(void);
-    void SendByteSerially(unsigned char);
-    unsigned char ReceiveByteSerially(void);
-    void SendStringSerially(unsigned char*);
-    void SendCommandAT(unsigned char*);
-# 35 "main.c" 2
-
-
-
-
-
-#pragma warning disable 520
-# 53 "main.c"
+# 39 "main.c" 2
+# 55 "main.c"
 unsigned char StringReceive[30];
 unsigned int pos;
-unsigned char WifiName[30]="_";
-unsigned char PassWord[30]="_";
-char mode = 'B';
 char StringDisplay[32];
-void SetEsp8266AsClient(void);
+int doorStatus = 0;
+int StatusChange = 0;
 
-char StringDisplay[32];
-void SetEsp8266AsClient(void);
+void picInit(void);
+void checkIR(void);
+void openDoor(void);
+void closeDoor(void);
+void ClearStringReceive();
+
+
+void main(void){
+    picInit();
+    LCD_clear();
+
+    while(1){
+        LCD_clear();
+        LCD_cursor_set(2, 1);
+        LCD_write_string("Open Door");
+        openDoor();
+        _delay((unsigned long)((5000)*(4000000/4000.0)));
+        LCD_clear();
+        LCD_cursor_set(2, 1);
+        LCD_write_string("Close Door");
+        closeDoor();
+        _delay((unsigned long)((5000)*(4000000/4000.0)));
+
+
+
+
+
+    }
+
+
+}
+
+void picInit(void){
+    TRISBbits.TRISB7 = 1;
+    TRISBbits.TRISB6 = 0;
+    TRISBbits.TRISB5 = 0;
+
+    InitUART();
+    LCD_init();
+    LCD_clear();
+    LCD_cursor_set(1, 1);
+    LCD_write_string("PIC Initialized");
+    _delay((unsigned long)((1000)*(4000000/4000.0)));
+    LCD_clear();
+}
+# 146 "main.c"
+void openDoor(void){
+    if(doorStatus != 1){
+        LCD_clear();
+        doorStatus = 1;
+        LCD_cursor_set(1, 1);
+        LCD_write_string("Door Opening");
+        PORTBbits.RB6 = 1;
+        PORTBbits.RB5 = 0;
+        _delay((unsigned long)((1500)*(4000000/4000.0)));
+        LCD_clear();
+        LCD_cursor_set(1, 1);
+        LCD_write_string("Door Opened");
+        PORTBbits.RB6 = 1;
+        PORTBbits.RB5 = 1;
+    }else{
+        LCD_clear();
+        LCD_cursor_set(1, 1);
+        LCD_write_string("Door Opened Before");
+    }
+}
+
+void closeDoor(void){
+    if(doorStatus != 0){
+        LCD_clear();
+        doorStatus = 0;
+
+        LCD_cursor_set(1, 1);
+        LCD_write_string("Door Closing");
+        PORTBbits.RB6 = 0;
+        PORTBbits.RB5 = 1;
+        _delay((unsigned long)((1500)*(4000000/4000.0)));
+        LCD_clear();
+        LCD_cursor_set(1, 1);
+        LCD_write_string("Door Closed");
+        PORTBbits.RB6 = 0;
+        PORTBbits.RB5 = 0;
+
+    }else{
+        LCD_clear();
+        LCD_cursor_set(1, 1);
+        LCD_write_string("Door Closed Before");
+    }
+}
+
+
+void __attribute__((picinterrupt(("")))) ISR() {
+    if (PIR1bits.RCIF == 1 && pos < 30) {
+        StringReceive[pos] = RCREG;
+        pos++;
+        RCIF = 0;
+    }
+
+    if(strstr(StringReceive, "Open") != ((void*)0)){
+        doorStatus = 1;
+        StatusChange = 1;
+        ClearStringReceive();
+    }if(strstr(StringReceive, "Close") != ((void*)0)){
+        doorStatus = 0;
+        StatusChange = 1;
+        ClearStringReceive();
+    }
+
+    if(pos >= 30){
+        ClearStringReceive();
+    }
+
+}
+
 void ClearStringReceive() {
     pos = 0;
     for (int i = 0; i < 30; i++)
         StringReceive[i] = '\0';
-}
-
-unsigned int adcResult = 0;
-
-void main(void){
-    LCD_init();
-    LCD_clear();
-    LCD_cursor_set(1, 1);
-    LCD_write_string("LCD_init()");
-    _delay((unsigned long)((1000)*(4000000/4000.0)));
-    LCD_cursor_set(1, 1);
-    LCD_write_string("InitKeyPad()");
-    _delay((unsigned long)((1000)*(4000000/4000.0)));
-
-    InitUART();
-    LCD_cursor_set(2, 1);
-    LCD_write_string("UART Init Success");
-    _delay((unsigned long)((1000)*(4000000/4000.0)));
-
-
-    LCD_clear();
-    LCD_cursor_set(1, 1);
-    SendCommandAT("AT");
-    LCD_write_string("AT Sent");
-    char x, flag;
-    LCD_cursor_set(2, 1);
-    SendCommandAT("Waiting to Response");
-    _delay((unsigned long)((1000)*(4000000/4000.0)));
-    LCD_clear();
-    LCD_cursor_set(1, 1);
-    LCD_write_string("Received OK");
-    LCD_cursor_set(2, 1);
-    LCD_write_string("ESP 8266 Connected");
-    _delay((unsigned long)((1000)*(4000000/4000.0)));
-    LCD_clear();
-
-    TRISB=0X00;
-    PORTB=0X00;
-
-    PORTBbits.RB7 = 0;
-    PORTBbits.RB6 = 0;
-
-    ADCON1 = 0x80;
-    ADCON0 = 0x01;
-
-    TRISA0 = 1;
-
-    int ival;
-
-    while(1){
-        GO_nDONE = 1;
-        while(GO_nDONE);
-
-        unsigned int adcResult = ADRESH << 8 | ADRESL;
-
-        LCD_cursor_set(2, 1);
-        LCD_write_string(StringReceive);
-        LCD_cursor_set(1, 13);
-        LCD_write_variable(adcResult, 4);
-        LCD_cursor_set(1, 1);
-        if(strstr(StringReceive, "Open") != ((void*)0)){
-            LCD_write_string("Door Opened");
-            PORTBbits.RB6 = 1;
-            _delay((unsigned long)((1000)*(4000000/4000.0)));
-            PORTBbits.RB7 = 1;
-
-            while(adcResult > 500){
-                GO_nDONE = 1;
-                while(GO_nDONE);
-                LCD_cursor_set(1, 1);
-                adcResult = ADRESH << 8 | ADRESL;
-
-                LCD_cursor_set(1, 1);
-                LCD_write_string("Check IR SR");
-                LCD_cursor_set(1, 13);
-                LCD_write_variable(adcResult, 4);
-                if(adcResult < 500){
-                    break;
-                }
-            }
-            LCD_cursor_set(1, 1);
-            LCD_write_string("Doned IR SR");
-            _delay((unsigned long)((500)*(4000000/4000.0)));
-            PORTBbits.RB6 = 0;
-            _delay((unsigned long)((1000)*(4000000/4000.0)));
-            PORTBbits.RB7 = 0;
-
-            ClearStringReceive();
-        }else{
-            LCD_write_string("Door Closed");
-            ClearStringReceive();
-        }
-
-
-        _delay((unsigned long)((1000)*(4000000/4000.0)));
-        LCD_clear();
-
-    }
-
-
-}
-
-void __attribute__((picinterrupt(("")))) ISR() {
-    if (PIR1bits.RCIF == 1 && pos < 28) {
-        StringReceive[pos] = RCREG;
-        pos++;
-
-        RCIF = 0;
-
-
-    }
-
-
-
 }
