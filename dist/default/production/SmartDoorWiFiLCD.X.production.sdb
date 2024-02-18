@@ -47,33 +47,40 @@
 [v _LCD_clear LCD_clear `(v  1 e 1 0 ]
 "9 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_cursor_set.c
 [v _LCD_cursor_set LCD_cursor_set `(v  1 e 1 0 ]
+[v i1_LCD_cursor_set LCD_cursor_set `(v  1 e 1 0 ]
 "18 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
 [v _LCD_init LCD_init `(v  1 e 1 0 ]
 "8 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_pulse_clock.c
 [v _LCD_pulse_clock LCD_pulse_clock `(v  1 e 1 0 ]
+[v i1_LCD_pulse_clock LCD_pulse_clock `(v  1 e 1 0 ]
 "8 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_char.c
 [v _LCD_write_char LCD_write_char `(v  1 e 1 0 ]
 "9 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
 [v _LCD_write_command LCD_write_command `(v  1 e 1 0 ]
+[v i1_LCD_write_command LCD_write_command `(v  1 e 1 0 ]
 "9 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
 [v _LCD_write_data LCD_write_data `(v  1 e 1 0 ]
+[v i1_LCD_write_data LCD_write_data `(v  1 e 1 0 ]
 "9 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
 [v _LCD_write_string LCD_write_string `(v  1 e 1 0 ]
+[v i1_LCD_write_string LCD_write_string `(v  1 e 1 0 ]
 "16 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_variable.c
 [v _LCD_write_variable LCD_write_variable `(v  1 e 1 0 ]
-"68 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
-[v _main main `(v  1 e 1 0 ]
-"93
-[v _picInit picInit `(v  1 e 1 0 ]
-"146
-[v _openDoor openDoor `(v  1 e 1 0 ]
-"167
-[v _closeDoor closeDoor `(v  1 e 1 0 ]
-"191
+"75 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"214
+"86
+[v _main main `(v  1 e 1 0 ]
+"178
+[v _picInit picInit `(v  1 e 1 0 ]
+"208
+[v _openDoor openDoor `(v  1 e 1 0 ]
+"224
+[v _closeDoor closeDoor `(v  1 e 1 0 ]
+"249
 [v _ClearStringReceive ClearStringReceive `(v  1 e 1 0 ]
-[s S281 . 1 `uc 1 RB0 1 0 :1:0 
+"254
+[v _setDoorStatus setDoorStatus `(v  1 e 1 0 ]
+[s S279 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -83,8 +90,8 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "245 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f887.h
-[u S290 . 1 `S281 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES290  1 e 1 @6 ]
+[u S288 . 1 `S279 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES288  1 e 1 @6 ]
 [s S100 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
@@ -97,7 +104,7 @@
 "369
 [u S109 . 1 `S100 1 . 1 0 ]
 [v _PORTDbits PORTDbits `VES109  1 e 1 @8 ]
-[s S302 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S238 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -106,9 +113,9 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S310 . 1 `S302 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES310  1 e 1 @12 ]
-[s S430 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S246 . 1 `S238 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES246  1 e 1 @12 ]
+[s S439 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -118,23 +125,27 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S439 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S448 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S443 . 1 `uc 1 . 1 0 :6:0 
+[s S452 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S446 . 1 `uc 1 . 1 0 :6:0 
+[s S455 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S449 . 1 `S430 1 . 1 0 `S439 1 . 1 0 `S443 1 . 1 0 `S446 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES449  1 e 1 @24 ]
+[u S458 . 1 `S439 1 . 1 0 `S448 1 . 1 0 `S452 1 . 1 0 `S455 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES458  1 e 1 @24 ]
 "1133
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1140
 [v _RCREG RCREG `VEuc  1 e 1 @26 ]
-[s S255 . 1 `uc 1 TRISB0 1 0 :1:0 
+"1238
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"1245
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+[s S300 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -144,8 +155,8 @@
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "1495
-[u S264 . 1 `S255 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES264  1 e 1 @134 ]
+[u S309 . 1 `S300 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES309  1 e 1 @134 ]
 [s S79 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
@@ -158,7 +169,7 @@
 "1619
 [u S88 . 1 `S79 1 . 1 0 ]
 [v _TRISDbits TRISDbits `VES88  1 e 1 @136 ]
-[s S474 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S483 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -167,9 +178,9 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1718
-[u S482 . 1 `S474 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES482  1 e 1 @140 ]
-[s S392 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S491 . 1 `S483 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES491  1 e 1 @140 ]
+[s S401 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -179,21 +190,27 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S401 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S410 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S405 . 1 `uc 1 . 1 0 :6:0 
+[s S414 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S408 . 1 `S392 1 . 1 0 `S401 1 . 1 0 `S405 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES408  1 e 1 @152 ]
+[u S417 . 1 `S401 1 . 1 0 `S410 1 . 1 0 `S414 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES417  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"2970
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+"2977
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
 "3840
 [v _CREN CREN `VEb  1 e 0 @196 ]
 "3900
 [v _GIE GIE `VEb  1 e 0 @95 ]
+"3909
+[v _GO_nDONE GO_nDONE `VEb  1 e 0 @249 ]
 "4005
 [v _OERR OERR `VEb  1 e 0 @193 ]
 "4044
@@ -242,23 +259,32 @@
 [v _LCD_display_control LCD_display_control `uc  1 e 1 0 ]
 "6
 [v _LCD_entry_mode LCD_entry_mode `uc  1 e 1 0 ]
-"55 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+"59 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
 [v _StringReceive StringReceive `[30]uc  1 e 30 0 ]
-"56
+"60
 [v _pos pos `ui  1 e 2 0 ]
-"58
+"62
 [v _doorStatus doorStatus `i  1 e 2 0 ]
-"59
+"63
 [v _StatusChange StatusChange `i  1 e 2 0 ]
-"68
+"64
+[v _doorClose doorClose `i  1 e 2 0 ]
+"86
 [v _main main `(v  1 e 1 0 ]
 {
-"91
+"100
+[v main@adcResult adcResult `ui  1 a 2 16 ]
+"176
 } 0
-"93
+"178
 [v _picInit picInit `(v  1 e 1 0 ]
 {
-"105
+"206
+} 0
+"224
+[v _closeDoor closeDoor `(v  1 e 1 0 ]
+{
+"246
 } 0
 "18 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_init.c
 [v _LCD_init LCD_init `(v  1 e 1 0 ]
@@ -270,15 +296,10 @@
 {
 "33
 } 0
-"146 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+"208 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
 [v _openDoor openDoor `(v  1 e 1 0 ]
 {
-"165
-} 0
-"167
-[v _closeDoor closeDoor `(v  1 e 1 0 ]
-{
-"188
+"222
 } 0
 "9 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
 [v _LCD_write_string LCD_write_string `(v  1 e 1 0 ]
@@ -330,10 +351,60 @@
 {
 "13
 } 0
-"191 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+"75 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"212
+"84
+} 0
+"254
+[v _setDoorStatus setDoorStatus `(v  1 e 1 0 ]
+{
+"270
+} 0
+"9 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_string.c
+[v i1_LCD_write_string LCD_write_string `(v  1 e 1 0 ]
+{
+[v i1LCD_write_string@string string `*.24uc  1 a 1 wreg ]
+"12
+[v i1LCD_write_string@i i `uc  1 a 1 5 ]
+"9
+[v i1LCD_write_string@string string `*.24uc  1 a 1 wreg ]
+"12
+[v i1LCD_write_string@string string `*.24uc  1 a 1 4 ]
+"15
+} 0
+"9 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_data.c
+[v i1_LCD_write_data LCD_write_data `(v  1 e 1 0 ]
+{
+[v i1LCD_write_data@data data `uc  1 a 1 wreg ]
+[v i1LCD_write_data@data data `uc  1 a 1 wreg ]
+"11
+[v i1LCD_write_data@data data `uc  1 a 1 3 ]
+"30
+} 0
+"9 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_cursor_set.c
+[v i1_LCD_cursor_set LCD_cursor_set `(v  1 e 1 0 ]
+{
+[v i1LCD_cursor_set@row row `uc  1 a 1 wreg ]
+[v i1LCD_cursor_set@row row `uc  1 a 1 wreg ]
+[v i1LCD_cursor_set@column column `uc  1 p 1 4 ]
+"12
+[v i1LCD_cursor_set@row row `uc  1 a 1 5 ]
+"19
+} 0
+"9 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_write_command.c
+[v i1_LCD_write_command LCD_write_command `(v  1 e 1 0 ]
+{
+[v i1LCD_write_command@command command `uc  1 a 1 wreg ]
+[v i1LCD_write_command@command command `uc  1 a 1 wreg ]
+"11
+[v i1LCD_write_command@command command `uc  1 a 1 3 ]
+"30
+} 0
+"8 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\LCD_pulse_clock.c
+[v i1_LCD_pulse_clock LCD_pulse_clock `(v  1 e 1 0 ]
+{
+"13
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strstr.c
 [v _strstr strstr `(*.4uc  1 e 1 0 ]
@@ -380,10 +451,10 @@
 [v strchr@s s `*.4DCuc  1 a 1 2 ]
 "11
 } 0
-"214 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
+"249 C:\Users\mkska\OneDrive\Documents\MPLABXProjects\SmartDoorWiFiLCD.X\main.c
 [v _ClearStringReceive ClearStringReceive `(v  1 e 1 0 ]
 {
-"216
+"251
 [v ClearStringReceive@i i `i  1 a 2 0 ]
-"218
+"253
 } 0

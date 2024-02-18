@@ -44,6 +44,10 @@
 #define TRISIRSensor TRISBbits.TRISB7
 #define IRSensor PORTBbits.RB7
 
+//LED Sensor
+#define TRISLEDSensor TRISBbits.TRISB4
+#define LEDSensor PORTBbits.RB4
+
 //Door lock motor wires
 #define TRISLockV TRISBbits.TRISB6
 #define LockV PORTBbits.RB6
@@ -55,164 +59,212 @@
 unsigned char StringReceive[30]; //Received Strings
 unsigned int pos; // StringReceives
 char StringDisplay[32];
-int doorStatus = 0;
+int doorStatus = 0; // 1 is open 0 close
 int StatusChange = 0;
+int doorClose = 0;
+int LEDO = 0;
+
 //functions defining
-void picInit(void);
-void checkIR(void);
-void openDoor(void);
-void closeDoor(void);
+void picInit();
+//void checkIR();
+void openDoor();
+void closeDoor();
+void setDoorStatus();
 void ClearStringReceive();
-
-
-void main(void){
-    picInit();
-    LCD_clear();
-    
-    while(1){
-        LCD_clear();
-        LCD_cursor_set(2, 1);
-        LCD_write_string("Open Door");
-        openDoor();
-        __delay_ms(5000);
-        LCD_clear();
-        LCD_cursor_set(2, 1);
-        LCD_write_string("Close Door");
-        closeDoor();
-        __delay_ms(5000);
-//        if(StatusChange == 1){
-//            checkIR();
-//            StatusChange = 0;
-//        }
-        
-    }
-
-
-}
-
-void picInit(void){
-    TRISIRSensor = 1; // Set IRSensor as input
-    TRISLockV = 0; // Set IRSensor as output
-    TRISLockG = 0; // Set IRSensor as output
-    
-    InitUART();
-    LCD_init();
-    LCD_clear();
-    LCD_cursor_set(1, 1);
-    LCD_write_string("PIC Initialized");
-    __delay_ms(1000);
-    LCD_clear();
-}
-
-//void checkIR(void){
-//    if(IRSensor == 1 && doorStatus == 0){
-//        LCD_clear();
-//        LCD_cursor_set(1, 1);
-//        LCD_write_string("Please close door");
-//        while(IRSensor == 1);
-//        if(IRSensor == 0 && doorStatus == 0){
-//            closeDoor();
-//        }
-//    }else if(IRSensor == 0 && doorStatus == 0){
-//        closeDoor();
-//    }if(IRSensor == 0 && doorStatus == 1){
-//        if(IRSensor == 0){
-//            LCD_clear();
-//            LCD_cursor_set(1, 1);
-//            LCD_write_string("Unlocked, Open Door");
-//            
-//            //waiting to open door
-//            for(int i = 0; i < 50; i++){//5seconds
-//                if(IRSensor == 1){
-//                    break;
-//                }
-//                __delay_ms(100);
-//            }
-//            
-//            if(IRSensor == 0){//if not opened door, lock door again
-//                doorStatus = 0;
-//                closeDoor();
-//            }else{//waiting to close door again
-//                while(IRSensor == 1);
-//                if(IRSensor == 0){
-//                    doorStatus = 0;
-//                    closeDoor();
-//                }
-//            }            
-//        }
-//    }
-//}
-
-void openDoor(void){
-    if(doorStatus != 1){
-        LCD_clear();
-        doorStatus = 1;
-        LCD_cursor_set(1, 1);
-        LCD_write_string("Door Opening");
-        LockV = 1;
-        LockG = 0;
-        __delay_ms(1500);
-        LCD_clear();
-        LCD_cursor_set(1, 1);
-        LCD_write_string("Door Opened");
-        LockV = 1;
-        LockG = 1;
-    }else{
-        LCD_clear();
-        LCD_cursor_set(1, 1);
-        LCD_write_string("Door Opened Before");
-    }  
-}
-
-void closeDoor(void){
-    if(doorStatus != 0){
-        LCD_clear();
-        doorStatus = 0;
-        
-        LCD_cursor_set(1, 1);
-        LCD_write_string("Door Closing");
-        LockV = 0;
-        LockG = 1;
-        __delay_ms(1500);
-        LCD_clear();
-        LCD_cursor_set(1, 1);
-        LCD_write_string("Door Closed");
-        LockV = 0;
-        LockG = 0;
-        
-    }else{
-        LCD_clear();
-        LCD_cursor_set(1, 1);
-        LCD_write_string("Door Closed Before");        
-    }
-}
-
 
 void __interrupt() ISR() {
     if (PIR1bits.RCIF == 1 && pos < 30) { // Check if USART RX interrupt flag is set
         StringReceive[pos] = RCREG; // Read the received data
         pos++;        
         RCIF = 0;
+        
     }
     
-    if(strstr(StringReceive, "Open") != NULL){
-        doorStatus = 1; 
-        StatusChange = 1;
-        ClearStringReceive();
-    }if(strstr(StringReceive, "Close") != NULL){
-        doorStatus = 0;
-        StatusChange = 1;
-        ClearStringReceive();
-    }
-    
-    if(pos >= 30){
-        ClearStringReceive();
-    }
-    
+    setDoorStatus();
 }
+
+void main(void){
+    picInit();
+    //LCD_clear();
+    //LCD_cursor_set(1, 1);
+
+    while(1){
+        // Start ADC conversion
+        GO_nDONE = 1;
+//        LCD_cursor_set(2, 1);
+//        LCD_write_string("SLTC 21UG0625 ICE");
+
+        // Wait for conversion to complete
+        while(GO_nDONE);
+       // Read ADC result
+        unsigned int adcResult = ADRESH << 8 | ADRESL;
+        if(adcResult > 300 && doorStatus == 1){
+            closeDoor();
+        }
+        if(adcResult < 300 && doorStatus == 0){
+            openDoor();
+        }
+        
+//        if(adcResult < 300 && LEDO == 0 && doorStatus == 1){
+//            LEDO = 1;
+//            //LCD_cursor_set(2, 1);
+//            //LCD_write_string("LED ON ");
+//            
+//            doorClose = 1; 
+//            StatusChange = 1;
+//            
+//            //LCD_write_variable(LEDO, 1);  
+//        }else if(LEDO == 1&& doorStatus == 0 ){
+//            //LCD_cursor_set(2, 1);
+//            //LCD_write_string("LED OFF");
+//            doorClose = 0;
+//            StatusChange = 1;
+//            LEDO = 0;
+//            //LCD_write_variable(LEDO, 1);  
+//        }
+        //LCD_cursor_set(2, 1);
+        //LCD_write_string("                ");
+        
+        
+        LCD_cursor_set(1, 1);
+        if(doorStatus == 0 && doorClose == 0 && IRSensor == 1){
+            
+            openDoor();
+//            __delay_ms(10000);
+            closeDoor();
+//            __delay_ms(10000);
+        }
+        if(doorClose == 0 && doorStatus == 1 && StatusChange == 1){
+            closeDoor();
+            StatusChange = 0;
+        }
+        if(doorClose == 1 && doorStatus == 0 && StatusChange == 1){
+            openDoor();
+//            int i = 0;
+//            while(doorClose == 1 && i < 100){
+//                //LCD_cursor_set(2, 1);
+//                __delay_ms(100);
+//                
+//                i++;
+//            }
+            //closeDoor();
+            StatusChange = 0;
+        }
+        
+        
+        
+//        LCD_clear();
+//        LCD_cursor_set(2, 1);
+//        LCD_write_string("Open Door");
+//        openDoor();
+//        __delay_ms(5000);
+//        LCD_clear();
+//        LCD_cursor_set(2, 1);
+//        LCD_write_string("Close Door");
+//        closeDoor();
+//        __delay_ms(5000);
+//        
+//        
+//        
+//        if(StatusChange == 1){
+//            checkIR();
+//            StatusChange = 0;
+//        }
+    }
+
+
+}
+
+void picInit(){
+    TRISIRSensor = 1; // Set IRSensor as input
+    TRISLEDSensor = 1;
+    TRISLockV = 0; // Set IRSensor as output
+    TRISLockG = 0; // Set IRSensor as output
+    ADCON1 = 0x80;  // Set AN0 to analog mode, Vref+ and Vref- are VDD and VSS
+    ADCON0 = 0x01;  // Select channel 0 (AN0)
+    
+    InitUART();
+    
+    LCD_init();
+    LCD_clear();
+    LCD_cursor_set(1, 1);
+    
+            // Start ADC conversion
+    GO_nDONE = 1;
+//        LCD_cursor_set(2, 1);
+//        LCD_write_string("SLTC 21UG0625 ICE");
+
+    // Wait for conversion to complete
+    while(GO_nDONE);
+   // Read ADC result
+    unsigned int adcResult = ADRESH << 8 | ADRESL;
+
+    LCD_write_string("PIC Initialized");
+    __delay_ms(1000);
+    LCD_clear();
+    closeDoor();
+}
+
+void openDoor(){
+    LCD_clear();
+    doorStatus = 1;
+    LCD_cursor_set(1, 1);
+    LCD_write_string("Door Opening");
+    LockV = 1;
+    LockG = 0;
+    __delay_ms(750);
+    LCD_clear();
+    LCD_cursor_set(1, 1);
+    LCD_write_string("Door Opened");
+    LockV = 1;
+    LockG = 1;
+    StatusChange = 0;
+}
+
+void closeDoor(){
+    LCD_clear();
+    LCD_cursor_set(1, 1);
+    LCD_write_string("IR Checking");
+    if(IRSensor != 0){
+        while(IRSensor != 0){
+        
+        }
+    }
+    LCD_clear();
+    doorStatus = 0;
+    LCD_cursor_set(1, 1);
+    LCD_write_string("Door Closing");
+    LockV = 0;
+    LockG = 1;
+    __delay_ms(750);
+    LCD_clear();
+    LCD_cursor_set(1, 1);
+    LCD_write_string("Door Closed");
+    LockV = 0;
+    LockG = 0;
+    StatusChange = 0;
+}
+
 
 void ClearStringReceive()    {
     pos = 0;
     for (int i = 0; i < 30; i++)
         StringReceive[i] = '\0';
+}
+void setDoorStatus(){
+    if(strstr(StringReceive, "O") != NULL){
+        doorClose = 1; 
+        StatusChange = 1;
+        ClearStringReceive();
+    }if(strstr(StringReceive, "C") != NULL){
+        doorClose = 0;
+        StatusChange = 1;
+        ClearStringReceive();
+    }
+
+    if(pos >= 30){       
+        ClearStringReceive();
+        LCD_cursor_set(2, 1);
+        LCD_write_string("                ");
+    }
 }
