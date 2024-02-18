@@ -3307,129 +3307,169 @@ void LCD_write_float(float, uint8_t, uint8_t);
 extern uint8_t LCD_display_control;
 extern uint8_t LCD_entry_mode;
 # 39 "main.c" 2
-# 55 "main.c"
+# 59 "main.c"
 unsigned char StringReceive[30];
 unsigned int pos;
 char StringDisplay[32];
 int doorStatus = 0;
 int StatusChange = 0;
+int doorClose = 0;
+int LEDO = 0;
 
-void picInit(void);
-void checkIR(void);
-void openDoor(void);
-void closeDoor(void);
+
+void picInit();
+
+void openDoor();
+void closeDoor();
+void setDoorStatus();
 void ClearStringReceive();
-
-
-void main(void){
-    picInit();
-    LCD_clear();
-
-    while(1){
-        LCD_clear();
-        LCD_cursor_set(2, 1);
-        LCD_write_string("Open Door");
-        openDoor();
-        _delay((unsigned long)((5000)*(4000000/4000.0)));
-        LCD_clear();
-        LCD_cursor_set(2, 1);
-        LCD_write_string("Close Door");
-        closeDoor();
-        _delay((unsigned long)((5000)*(4000000/4000.0)));
-
-
-
-
-
-    }
-
-
-}
-
-void picInit(void){
-    TRISBbits.TRISB7 = 1;
-    TRISBbits.TRISB6 = 0;
-    TRISBbits.TRISB5 = 0;
-
-    InitUART();
-    LCD_init();
-    LCD_clear();
-    LCD_cursor_set(1, 1);
-    LCD_write_string("PIC Initialized");
-    _delay((unsigned long)((1000)*(4000000/4000.0)));
-    LCD_clear();
-}
-# 146 "main.c"
-void openDoor(void){
-    if(doorStatus != 1){
-        LCD_clear();
-        doorStatus = 1;
-        LCD_cursor_set(1, 1);
-        LCD_write_string("Door Opening");
-        PORTBbits.RB6 = 1;
-        PORTBbits.RB5 = 0;
-        _delay((unsigned long)((1500)*(4000000/4000.0)));
-        LCD_clear();
-        LCD_cursor_set(1, 1);
-        LCD_write_string("Door Opened");
-        PORTBbits.RB6 = 1;
-        PORTBbits.RB5 = 1;
-    }else{
-        LCD_clear();
-        LCD_cursor_set(1, 1);
-        LCD_write_string("Door Opened Before");
-    }
-}
-
-void closeDoor(void){
-    if(doorStatus != 0){
-        LCD_clear();
-        doorStatus = 0;
-
-        LCD_cursor_set(1, 1);
-        LCD_write_string("Door Closing");
-        PORTBbits.RB6 = 0;
-        PORTBbits.RB5 = 1;
-        _delay((unsigned long)((1500)*(4000000/4000.0)));
-        LCD_clear();
-        LCD_cursor_set(1, 1);
-        LCD_write_string("Door Closed");
-        PORTBbits.RB6 = 0;
-        PORTBbits.RB5 = 0;
-
-    }else{
-        LCD_clear();
-        LCD_cursor_set(1, 1);
-        LCD_write_string("Door Closed Before");
-    }
-}
-
 
 void __attribute__((picinterrupt(("")))) ISR() {
     if (PIR1bits.RCIF == 1 && pos < 30) {
         StringReceive[pos] = RCREG;
         pos++;
         RCIF = 0;
+
     }
 
-    if(strstr(StringReceive, "Open") != ((void*)0)){
-        doorStatus = 1;
+    setDoorStatus();
+}
+
+void main(void){
+    picInit();
+
+
+
+    while(1){
+
+        GO_nDONE = 1;
+
+
+
+
+        while(GO_nDONE);
+
+        unsigned int adcResult = ADRESH << 8 | ADRESL;
+        if(adcResult > 300 && doorStatus == 1){
+            closeDoor();
+        }
+        if(adcResult < 300 && doorStatus == 0){
+            openDoor();
+        }
+# 129 "main.c"
+        LCD_cursor_set(1, 1);
+        if(doorStatus == 0 && doorClose == 0 && PORTBbits.RB7 == 1){
+
+            openDoor();
+
+            closeDoor();
+
+        }
+        if(doorClose == 0 && doorStatus == 1 && StatusChange == 1){
+            closeDoor();
+            StatusChange = 0;
+        }
+        if(doorClose == 1 && doorStatus == 0 && StatusChange == 1){
+            openDoor();
+# 151 "main.c"
+            StatusChange = 0;
+        }
+# 173 "main.c"
+    }
+
+
+}
+
+void picInit(){
+    TRISBbits.TRISB7 = 1;
+    TRISBbits.TRISB4 = 1;
+    TRISBbits.TRISB6 = 0;
+    TRISBbits.TRISB5 = 0;
+    ADCON1 = 0x80;
+    ADCON0 = 0x01;
+
+    InitUART();
+
+    LCD_init();
+    LCD_clear();
+    LCD_cursor_set(1, 1);
+
+
+    GO_nDONE = 1;
+
+
+
+
+    while(GO_nDONE);
+
+    unsigned int adcResult = ADRESH << 8 | ADRESL;
+
+    LCD_write_string("PIC Initialized");
+    _delay((unsigned long)((1000)*(4000000/4000.0)));
+    LCD_clear();
+    closeDoor();
+}
+
+void openDoor(){
+    LCD_clear();
+    doorStatus = 1;
+    LCD_cursor_set(1, 1);
+    LCD_write_string("Door Opening");
+    PORTBbits.RB6 = 1;
+    PORTBbits.RB5 = 0;
+    _delay((unsigned long)((750)*(4000000/4000.0)));
+    LCD_clear();
+    LCD_cursor_set(1, 1);
+    LCD_write_string("Door Opened");
+    PORTBbits.RB6 = 1;
+    PORTBbits.RB5 = 1;
+    StatusChange = 0;
+}
+
+void closeDoor(){
+    LCD_clear();
+    LCD_cursor_set(1, 1);
+    LCD_write_string("IR Checking");
+    if(PORTBbits.RB7 != 0){
+        while(PORTBbits.RB7 != 0){
+
+        }
+    }
+    LCD_clear();
+    doorStatus = 0;
+    LCD_cursor_set(1, 1);
+    LCD_write_string("Door Closing");
+    PORTBbits.RB6 = 0;
+    PORTBbits.RB5 = 1;
+    _delay((unsigned long)((750)*(4000000/4000.0)));
+    LCD_clear();
+    LCD_cursor_set(1, 1);
+    LCD_write_string("Door Closed");
+    PORTBbits.RB6 = 0;
+    PORTBbits.RB5 = 0;
+    StatusChange = 0;
+}
+
+
+void ClearStringReceive() {
+    pos = 0;
+    for (int i = 0; i < 30; i++)
+        StringReceive[i] = '\0';
+}
+void setDoorStatus(){
+    if(strstr(StringReceive, "O") != ((void*)0)){
+        doorClose = 1;
         StatusChange = 1;
         ClearStringReceive();
-    }if(strstr(StringReceive, "Close") != ((void*)0)){
-        doorStatus = 0;
+    }if(strstr(StringReceive, "C") != ((void*)0)){
+        doorClose = 0;
         StatusChange = 1;
         ClearStringReceive();
     }
 
     if(pos >= 30){
         ClearStringReceive();
+        LCD_cursor_set(2, 1);
+        LCD_write_string("                ");
     }
-
-}
-
-void ClearStringReceive() {
-    pos = 0;
-    for (int i = 0; i < 30; i++)
-        StringReceive[i] = '\0';
 }
